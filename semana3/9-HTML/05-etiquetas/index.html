@@ -1,0 +1,1153 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Etiquetas Comunes</title>
+  <link rel="stylesheet" href="https://highlightjs.org/static/demo/styles/monokai-sublime.css">
+  <style>
+    body {
+      margin: 0;
+      padding: 0 20px;
+      border-top: 4px solid #ff6200;
+      background-color: #111;
+      color: #aaa;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif
+    }
+
+    a {
+      color: cyan;
+    }
+
+    h1,
+    h2 {
+      color: #e0e0e0;
+    }
+
+    ul li strong,
+    p code {
+      color: #f92672;
+    }
+
+    img,
+    video,
+    audio,
+    iframe {
+      max-width: 100%;
+    }
+
+    dialog {
+      width: 80%;
+      border-radius: 10px;
+      border: none;
+      background-color: #222;
+      color: #fff;
+    }
+  </style>
+</head>
+
+<body>
+
+  <h1>Etiquetas</h1>
+
+  <h2>Hipervínculos</h2>
+  <p>Los hipervínculos son una de las innovaciones más interesantes que ofrece la Web. Han formado parte de esta desde
+    el principio, pero hacen que la web sea web : Los hipervínculos nos permiten vincular documentos a otros documentos
+    o recursos, vincular a partes específicas de documentos o hacer que las aplicaciones estén disponibles en una
+    dirección web. Prácticamente cualquier contenido web se puede convertir en un enlace que, al pulsarlo (activarlo),
+    dirija el navegador a la dirección web a la que apunta el enlace (URL).</p>
+
+  <a href="https://htmlreference.io/">Enlace a una web</a> <br>
+  <a href="https://htmlreference.io/element/a/">Enlace a un directorio</a>
+
+
+  <p>Dos términos que encontrarás en la Web son URL absoluta y URL relativa:</p>
+
+  <h3>Código:</h3>
+  <pre><code class="language-html">
+    &lt;!-- absoluta --&gt;
+    &lt;a href=&quot;https://htmlreference.io/&quot;&gt;Enlace a una web&lt;/a&gt; &lt;br&gt;<br />
+    &lt;!-- relativa --&gt;
+    &lt;a href=&quot;https://htmlreference.io/element/a/&quot;&gt;Enlace a un directorio&lt;/a&gt;
+  </code></pre>
+
+  <ul>
+    <li>URL absoluta: Hace referencia a una dirección definida por su ubicación absoluta en la web, esta incluye el
+      protocolo y el nombre del dominio.</li>
+    <li>Una URL relativa: Hace referencia a una dirección que depende de la posición del archivo desde donde se utiliza.
+    </li>
+  </ul>
+
+  <p>Pero, ¿dónde se abre el enlace? Pues por defecto y si no hemos configurado nada en el navegador web que estemos
+    utilizando el enlace se abre en la misma ventana en la que tengamos el enlace.</p>
+
+  <p>Si bien, en el enlace, podemos indicar el destino que queremos darle a dicho enlace. Eso lo podemos hacer mediante
+    el atributo target. Los valores que admite el atributo target son: </p>
+
+  <ul>
+    <li><strong><code>_blank</code></strong> abrir el enlace en una nueva pestaña.</li>
+    <li><strong><code>_self</code></strong> abrir el enlace en el mismo marco actual.</li>
+    <li><strong><code>_parent</code></strong> abrir el enlace en el marco padre.</li>
+    <li><strong><code>_top</code></strong> abrir el enlace en la ventana principal.</li>
+  </ul>
+
+
+  <p> Si bien la etiqueta <code>&lt;a&gt;</code> nos ofrece un atributo llamado <code>title</code>, en el podemos
+    describir de una forma textual el destino del enlace. Esto servirá no solo al usuario para que pueda obtener más
+    información de dónde va, si no a las máquinas a la hora de asignar un nombre a la URI sobre la que estamos enlazando
+  </p>
+
+  <h2>Enlaces a otro documento HTML</h2>
+
+  <a href="./documento.html">Enlace a un documento</a>
+
+  <h3>Código:</h3>
+  <pre><code class="language-html">
+    &lt;a href=&quot;./documento.html&quot;&gt;Enlace a un documento&lt;/a&gt;
+  </code></pre>
+
+  <p> Pero otra capacidad que tenemos en HTML es la de enlazar a una parte concreta del documento. Imagina que en un
+    documento tenemos un título y varios capítulos. Y lo que queremos hacer desde otro documento HTML o bien desde el
+    mismo documento es enlazar directamente al inicio de un capítulo.</p>
+
+  <a href="./documento.html#resumen">Enlace a una parte de un documento</a>
+
+  <h3>Código:</h3>
+  <pre><code class="language-html">
+    &lt;a href=&quot;./documento.html#resumen&quot;&gt;Enlace a una parte de un documento&lt;/a&gt;
+  </code></pre>
+
+
+  <h2>Enlaces a un archivo</h2>
+  <a href="imagen.png">Enlace a una imagen</a> <br>
+  <a href="audio.mp3">Enlace a un archivo de sonido</a>
+
+  <h3>Código:</h3>
+  <pre><code class="language-html">
+    &lt;a href=&quot;imagen.png&quot;&gt;Enlace a una imagen&lt;/a&gt; &lt;br&gt;<br />
+    &lt;a href=&quot;audio.mp3&quot;&gt;Enlace a un archivo de sonido&lt;/a&gt;
+  </code></pre>
+
+  <p>Es importante que sepas que <strong>el navegador siempre va a intentar abrir el fichero enlazado en el atributo
+      href</strong> para poder mostrarlo visualmente. En el caso de que no encuentre ningún programa para abrirlo nos
+    mostrará un menú emergente en el que nos dará la posibilidad de guardar el fichero</p>
+
+
+  <h2>Enlaces con imágenes</h2>
+  <a href="https://blog.ida.cl/wp-content/uploads/sites/5/2020/04/tamano-redes-blog-655x470.png" target="_blank">
+    <img src="https://blog.ida.cl/wp-content/uploads/sites/5/2020/04/tamano-redes-blog-655x470.png" alt="imagen">
+  </a>
+
+  <h3>Código:</h3>
+  <pre><code class="language-html">
+    &lt;a href=&quot;https://blog.ida.cl/wp-content/uploads/sites/5/2020/04/tamano-redes-blog-655x470.png&quot; target=&quot;_blank&quot;&gt;
+      &lt;img src=&quot;https://blog.ida.cl/wp-content/uploads/sites/5/2020/04/tamano-redes-blog-655x470.png&quot; alt=&quot;imagen&quot; width=&quot;100&quot; height=&quot;100&quot;&gt;
+    &lt;/a&gt;
+  </code></pre>
+  <p>En los enlaces podemos poner imágenes. De esta forma toda la imagen será un elemento enlazable que nos llevará, en
+    el caso de pinchar sobre ella, al destino indicado en el atributo href.</p>
+
+  <h2>Protocolos en la URL del enlace</h2>
+
+  <p>Hasta ahora hemos visto que todos los enlaces en HTML se apoyan en el protocolo http, pero el enlace especificado
+    en el atributo href no tiene porqué ser http, si no que podría ser otro protocolo como ftp, mailto, tel, etc.</p>
+
+  <p>El protocolo mailto es un protocolo de correo electrónico.</p>
+
+  <a href="mailto:usuario@dominio.com">Eviar email a usuario@dominio.com</a>
+
+  <h3>Código:</h3>
+  <pre><code class="language-html">
+    &lt;a href=&quot;mailto:usuario@dominio.com&quot;&gt;...&lt;/a&gt;
+  </code></pre>
+
+  <p>La ventaja de utilizar el protocolo mailto dentro de los enlaces en HTML es que el navegador web nos va a abrir
+    directamente el programa de correo electrónico que tengamos predeterminado en el ordenador.</p>
+
+  <p>De hecho, puedes incluir cualquier campo estándar contenido en el encabezado de cualquier mensaje en la URL mailto
+    que proporciones. Los más utilizados son el «subject» (asunto), «cc» (con copia a) o «bcc» (copia oculta), y «body»
+    (cuerpo del mensaje, que no es realmente un campo de la cabecera, pero permite especificar un mensaje breve para el
+    nuevo correo electrónico). Cada campo y su valor se especifican como un argumento de la consulta.</p>
+
+  <pre><code class="language-html">
+    &lt;a href=&quot;mailto:soporte@academlo.com?cc=jsfdz@mail.com&amp;bcc=brayan@mail.com&amp;subject=El%20asunto%20del%20correo&amp;body=El%20cuerpo%20del%20correo&quot;&gt;...&lt;/a&gt;
+  </code></pre>
+
+  <p>El <code>%20</code> es un espacio en blanco en la URL.</p>
+
+  <p>Los enlaces de clic para chatear de WhatsApp se componen de un protocolo, un nombre de dominio y un número de
+    teléfono.</p>
+
+  <a href="https://wa.me/0000000000000?text=Tu%20mensaje%20de%20texto" target="_blank">Enviar mensaje a Whatsapp</a>
+
+  <h3>Código:</h3>
+  <pre><code class="language-html">
+    &lt;a href=&quot;https://wa.me/tu_numero_de_telefono?text=Tu%20mensaje%20de%20texto&quot; target=&quot;_blank&quot;&gt;...&lt;/a&gt;
+  </code></pre>
+
+  <p>El protocolo tel: para llamar por teléfono</p>
+  <a href="tel:1-234-567-8910">Contacto: 1-234-567-8910</a>
+
+  <h3>Código:</h3>
+  <pre><code class="language-html">
+    &lt;a href=&quot;tel:1-234-567-8910&quot;&gt;Contacto: 1-234-567-8910&lt;/a&gt;
+  </code></pre>
+
+  <h2>El elemento link</h2>
+
+  <p>Hasta ahora hemos visto enlaces explícitos entre diferentes recursos. Si bien el lenguaje HTML nos da la
+    posibilidad de establecer relaciones entre documentos sin tener que explicitar directamente un enlace. Para ello
+    HTML nos ofrece el elemento link.</p>
+
+  <pre><code class="language-html">
+    &lt;link href=&quot;destino&quot; rel=&quot;relacion&quot; rev=&quot;relacion-inversa&quot; /&gt;
+  </code></pre>
+
+  <p>Es importante saber que el elemento link solo aparece dentro de la cabecera o head del documento.</p>
+
+  <p>El atributo rel establece la relación que hay con el documento destino, mientras que el atributo rev define la
+    relación del documento destino con el documento actual. Es decir, la relación inversa.</p>
+
+  <p>Por otro lado el atributo href es el que contiene la URI del recurso destino.</p>
+
+  <hr>
+
+  <h2>Acordeón en HTML</h2>
+
+  <p>El elemento HTML <code>details</code> crea un widget (Acordeón) de divulgación en el que la información solo es
+    visible cuando el widget se alterna en un estado "abierto". Se debe proporcionar un resumen o etiqueta utilizando el
+    elemento <code>summary</code>.</p>
+
+  <details>
+    <summary>Acordeón (click para abrir)</summary>
+    <article>
+      <h4>Articulo #1</h4>
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Veniam, culpa. Eos odio omnis sit illum magnam eum
+        voluptates earum numquam! Deleniti vitae illum alias sequi aspernatur magnam quo quaerat reiciendis.</p>
+    </article>
+  </details>
+
+  <h3>Código:</h3>
+  <pre><code class="language-html">
+    &lt;details&gt;
+      &lt;summary&gt;Acordeón (click para abrir)&lt;/summary&gt;
+      &lt;article&gt;
+        &lt;h4&gt;Articulo #1&lt;/h4&gt;
+        &lt;p&gt;Lorem ipsum dolor sit amet consectetur adipisicing elit. Veniam, culpa. Eos odio omnis sit illum magnam eum
+          voluptates earum numquam! Deleniti vitae illum alias sequi aspernatur magnam quo quaerat reiciendis.&lt;/p&gt;
+      &lt;/article&gt;
+    &lt;/details&gt;
+  </code></pre>
+
+  <details open>
+    <summary>Acordeón abierto</summary>
+    <article>
+      <h4>Articulo #2</h4>
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Veniam, culpa. Eos odio omnis sit illum magnam eum
+        voluptates earum numquam! Deleniti vitae illum alias sequi aspernatur magnam quo quaerat reiciendis.</p>
+    </article>
+  </details>
+
+  <h3>Código:</h3>
+  <pre><code class="language-html">
+    &lt;details open&gt;
+      &lt;summary&gt;Acordeón abierto&lt;/summary&gt;
+      &lt;article&gt;
+        &lt;h4&gt;Articulo #2&lt;/h4&gt;
+        &lt;p&gt;Lorem ipsum dolor sit amet consectetur adipisicing elit. Veniam, culpa. Eos odio omnis sit illum magnam eum
+          voluptates earum numquam! Deleniti vitae illum alias sequi aspernatur magnam quo quaerat reiciendis.&lt;/p&gt;
+      &lt;/article&gt;
+    &lt;/details&gt;
+  </code></pre>
+
+  <ul>
+    <li><strong><code>open</code></strong>: Este atributo booleano indica el estado del el contenido del elemento. Se
+      muestran el contenido cuando existe este atributo y se ocultan cuando este atributo está ausente. Por defecto este
+      atributo está ausente, lo que significa que el contenido no es visible.</li>
+  </ul>
+
+  <br>
+
+  <hr>
+
+  <h2>Modal en HTML</h2>
+
+  <p>El elemento HTML <code>dialog</code> representa una caja de diálogo u otro componente interactivo, como inspector o
+    ventana.</p>
+
+  <dialog>
+    <h3>Modal</h3>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque sit minima aperiam rerum quidem consequatur esse
+      porro et cupiditate? Blanditiis fugit provident ducimus rerum omnis dolore voluptate beatae esse exercitationem.
+    </p>
+    <button type="button">aceptar</button>
+  </dialog>
+
+  <h3>Código:</h3>
+  <pre><code class="language-html">
+    &lt;dialog open&gt;
+      &lt;h3&gt;Modal&lt;/h3&gt;
+      &lt;p&gt;Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque sit minima aperiam rerum quidem consequatur esse
+        porro et cupiditate? Blanditiis fugit provident ducimus rerum omnis dolore voluptate beatae esse exercitationem.
+      &lt;/p&gt;
+      &lt;button type=&quot;button&quot;&gt;aceptar&lt;/button&gt;
+    &lt;/dialog&gt;
+  </code></pre>
+
+  <ul>
+    <li><strong><code>open</code></strong>: Indica que el diálogo está activo y disponible para interactuar. Cuando el
+      atributo open no está asignado, no debe mostrarse al usuario.</li>
+  </ul>
+
+  <hr>
+
+  <h2>Listas</h2>
+
+  <p>Ahora volvamos nuestra atención hacia las listas. Las listas están en todos los aspectos de nuestra vida: desde la
+    lista de compras a la lista de instrucciones que sigues inconscientemente para llegar a casa todos los días. Las
+    listas están en todos lados en la web también y hay tres diferentes tipos de las que nos vamos a ocupar.</p>
+
+  <h3>Listas no ordenadas</h3>
+
+  <p>Las listas no ordenadas se usan para marcar listas de artículos cuyo orden no es importante.</p>
+
+  <p>Cada lista desordenada comienza con un elemento <code>&lt;ul&gt;</code> («unordered list») que delimita todos los
+    elementos de la lista, el siguiente paso es delimitar cada artículo de la lista con un elemento
+    <code>&lt;li&gt;</code> («list item»).</p>
+
+  <ul type="square">
+    <li>Lista 1</li>
+    <li>Lista 2</li>
+    <li>Lista 3</li>
+  </ul>
+
+  <h3>Código:</h3>
+  <pre><code class="language-html">
+    &lt;ul type=&quot;square&quot;&gt;
+      &lt;li&gt;Lista 1&lt;/li&gt;
+      &lt;li&gt;Lista 2&lt;/li&gt;
+      &lt;li&gt;Lista 3&lt;/li&gt;
+    &lt;/ul&gt;
+  </code></pre>
+
+  <p>Podemos usar el atributo <code>type</code>: con uno de los siguientes valores: '<code>disc</code>',
+    '<code>square</code>', o '<code>circle</code>'.</p>
+
+  <h3>Listas ordenadas</h3>
+
+  <p>Las listas ordenadas son aquellas en las que el orden de los elementos sí importa.</p>
+
+  <p>Cada lista ordenada comienza con un elemento <code>&lt;ol&gt;</code> («ordered list») que delimita todos los
+    elementos de la lista, el siguiente paso es delimitar cada artículo de la lista con un elemento
+    <code>&lt;li&gt;</code> («list item»).</p>
+
+  <ol type="i">
+    <li>Lista 1</li>
+    <li>Lista 2</li>
+    <li>Lista 3</li>
+  </ol>
+
+  <p>Podemos usar el atributo <code>type</code>: con uno de los siguientes valores: '<code>1</code>', '<code>a</code>',
+    '<code>A</code>', '<code>i</code>', o '<code>I</code>'.</p>
+
+  <h3>Código:</h3>
+  <pre><code class="language-html">
+    &lt;ol type=&quot;i&quot;&gt;
+      &lt;li&gt;Lista 1&lt;/li&gt;
+      &lt;li&gt;Lista 2&lt;/li&gt;
+      &lt;li&gt;Lista 3&lt;/li&gt;
+    &lt;/ol&gt;
+  </code></pre>
+
+
+  <p>El atributo <code>start</code> establece el número de la lista que se empieza a mostrar. El atributo
+    <code>reversed</code> establece si la lista se muestra inversa.
+  </p>
+
+  <ol start="3" reversed>
+    <li>Lista 1</li>
+    <li>Lista 2</li>
+    <li>Lista 3</li>
+  </ol>
+
+  <h3>Código:</h3>
+  <pre><code class="language-html">
+    &lt;ol start=&quot;3&quot; reversed&gt;
+      &lt;li&gt;Lista 1&lt;/li&gt;
+      &lt;li&gt;Lista 2&lt;/li&gt;
+      &lt;li&gt;Lista 3&lt;/li&gt;
+    &lt;/ol&gt;
+  </code></pre>
+
+  <h3>Listas anidadas</h3>
+
+  <p>Es perfectamente correcto anidar una lista dentro de otra. Posiblemente quieras tener subelementos bajo elementos de rango superior.</p>
+
+  <ul>
+    <li>Elemento 1
+      <ul>
+        <li>Elemento 1.1</li>
+        <li>Elemento 1.2</li>
+        <li>Elemento 1.3</li>
+      </ul>
+    </li>
+    <li>Elemento 2
+      <ul>
+        <li>Elemento 2.1</li>
+        <li>Elemento 2.2</li>
+        <li>Elemento 2.3</li>
+      </ul>
+    </li>
+    <li>Elemento 3
+      <ul>
+        <li>Elemento 3.1</li>
+        <li>Elemento 3.2</li>
+        <li>Elemento 3.3</li>
+      </ul>
+    </li>
+  </ul>
+
+  <h3>Código:</h3>
+  <pre><code class="language-html">
+    &lt;ul&gt;<br />
+      &lt;li&gt;Elemento 1<br />
+        &lt;ul&gt;<br />
+          &lt;li&gt;Elemento 1.1&lt;/li&gt;<br />
+          &lt;li&gt;Elemento 1.2&lt;/li&gt;<br />
+          &lt;li&gt;Elemento 1.3&lt;/li&gt;<br />
+        &lt;/ul&gt;<br />
+      &lt;/li&gt;<br />
+      &lt;li&gt;Elemento 2<br />
+        &lt;ul&gt;<br />
+          &lt;li&gt;Elemento 2.1&lt;/li&gt;<br />
+          &lt;li&gt;Elemento 2.2&lt;/li&gt;<br />
+          &lt;li&gt;Elemento 2.3&lt;/li&gt;<br />
+        &lt;/ul&gt;<br />
+      &lt;/li&gt;<br />
+      &lt;li&gt;Elemento 3<br />
+        &lt;ul&gt;<br />
+          &lt;li&gt;Elemento 3.1&lt;/li&gt;<br />
+          &lt;li&gt;Elemento 3.2&lt;/li&gt;<br />
+          &lt;li&gt;Elemento 3.3&lt;/li&gt;<br />
+        &lt;/ul&gt;<br />
+      &lt;/li&gt;<br />
+    &lt;/ul&gt;
+  </code></pre>
+
+  <h3>Listas de definición:</h3>
+
+  <p>Las listas de definición sirven para hacer un conjunto de elementos con pares concepto-descripción.</p>
+
+  <p>Para realizar una lista de definición, la etiqueta principal es DL y su cierre (definition list). La etiquetas del
+    elemento y su definición son DT (definition term) y DD (definition definition) respectivamente.</p>
+
+  <dl>
+    <dt>Elemento 1</dt>
+    <dd>Descripción del elemento 1</dd>
+    <dt>Elemento 2</dt>
+    <dd>Descripción del elemento 2</dd>
+    <dt>Elemento 3</dt>
+    <dd>Descripción del elemento 3</dd>
+  </dl>
+
+  <h3>Código:</h3>
+  <pre><code class="language-html">
+    &lt;dl&gt;
+      &lt;dt&gt;Elemento 1&lt;/dt&gt;
+      &lt;dd&gt;Descripción del elemento 1&lt;/dd&gt;
+      &lt;dt&gt;Elemento 2&lt;/dt&gt;
+      &lt;dd&gt;Descripción del elemento 2&lt;/dd&gt;
+      &lt;dt&gt;Elemento 3&lt;/dt&gt;
+      &lt;dd&gt;Descripción del elemento 3&lt;/dd&gt;
+    &lt;/dl&gt;
+  </code></pre>
+
+  <hr>
+
+  <h2>Tablas</h2>
+
+  <p>Las tablas en HTML nos permiten mostrar información de forma agrupada. Ya sea texto, imágenes, vídeos, etc.</p>
+
+  <p>Un mal uso de las tablas en HTML es el motivo de maquetación, uso que se dió a las tablas en los principios del
+    lenguaje HTML. Algo que hoy en día <strong>es una mala práctica</strong>. Cambiando por un modelo de maquetación
+    apoyado en capas.</p>
+
+  <h3>Básica</h3>
+
+  <p>Para crear una tabla vamos a necesitar conocer, al menos, tres elementos: table, tr y td. Si bien existen otros
+    cuantos que nos permitirán ampliar la funcionalidad de las tablas.</p>
+
+  <ul>
+    <li><strong><code>table</code></strong>: es el elemento principal de la tabla.</li>
+    <li><strong><code>tr</code></strong>: es el elemento que contiene las filas de la tabla.</li>
+    <li><strong><code>td</code></strong>: es el elemento que contiene las celdas de la tabla.</li>
+  </ul>
+
+  <table border>
+    <tr>
+      <td>Fila 1 Columna 1 Celda 1</td>
+      <td>Fila 1 Columna 2 Celda 2</td>
+      <td>Fila 1 Columna 3 Celda 3</td>
+    </tr>
+    <tr>
+      <td>Fila 2 Columna 1 Celda 1</td>
+      <td>Fila 2 Columna 2 Celda 2</td>
+      <td>Fila 2 Columna 3 Celda 3</td>
+    </tr>
+  </table>
+
+  <h3>Código:</h3>
+  <pre><code class="language-html">
+      &lt;table border&gt;
+        &lt;tr&gt;
+          &lt;td&gt;Fila 1 Columna 1 Celda 1&lt;/td&gt;
+          &lt;td&gt;Fila 1 Columna 2 Celda 2&lt;/td&gt;
+          &lt;td&gt;Fila 1 Columna 3 Celda 3&lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;
+          &lt;td&gt;Fila 2 Columna 1 Celda 1&lt;/td&gt;
+          &lt;td&gt;Fila 2 Columna 2 Celda 2&lt;/td&gt;
+          &lt;td&gt;Fila 2 Columna 3 Celda 3&lt;/td&gt;
+        &lt;/tr&gt;
+      &lt;/table&gt;
+    </code></pre>
+
+  <h3>Agregando titulo y cabecera</h3>
+
+  <p>Lo primero que haremos será poner un título a la tabla. Para ello vamos a utilizar el elemento caption. El
+    contenido del elemento <code>caption</code> será el título que le asignemos a la tabla.</p>
+
+  <p>Una cosa que vemos es que las tablas suelen tener una primera fila de encabezado. Dentro de las tablas en HTML
+    podemos identificar esta fila mediante el elemento <code>th</code>. Es decir, para las celdas de la fila de cabecera
+    en vez de utilizar un elemento <code>td</code> utilizaremos un elemento <code>th</code>.</p>
+
+  <table border>
+    <caption>Mi tabla de ejemplo</caption>
+    <tr>
+      <th>Columna 1</th>
+      <th>Columna 2</th>
+      <th>Columna 3</th>
+    </tr>
+    <tr>
+      <td>Fila 1 Columna 1 Celda 1</td>
+      <td>Fila 1 Columna 2 Celda 2</td>
+      <td>Fila 1 Columna 3 Celda 3</td>
+    </tr>
+    <tr>
+      <td>Fila 2 Columna 1 Celda 1</td>
+      <td>Fila 2 Columna 2 Celda 2</td>
+      <td>Fila 2 Columna 3 Celda 3</td>
+    </tr>
+  </table>
+
+  <h3>Código:</h3>
+  <pre><code class="language-html">
+      &lt;table border&gt;
+        &lt;caption&gt;Mi tabla de ejemplo&lt;/caption&gt;
+        &lt;tr&gt;
+          &lt;th&gt;Columna 1&lt;/th&gt;
+          &lt;th&gt;Columna 2&lt;/th&gt;
+          &lt;th&gt;Columna 3&lt;/th&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;
+          &lt;td&gt;Fila 1 Columna 1 Celda 1&lt;/td&gt;
+          &lt;td&gt;Fila 1 Columna 2 Celda 2&lt;/td&gt;
+          &lt;td&gt;Fila 1 Columna 3 Celda 3&lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;
+          &lt;td&gt;Fila 2 Columna 1 Celda 1&lt;/td&gt;
+          &lt;td&gt;Fila 2 Columna 2 Celda 2&lt;/td&gt;
+          &lt;td&gt;Fila 2 Columna 3 Celda 3&lt;/td&gt;
+        &lt;/tr&gt;
+      &lt;/table&gt;
+    </code></pre>
+
+  <h3>Agrupando Celdas</h3>
+  <p>A la hora de presentar datos en una tabla nos puede surgir la necesidad de agrupar celdas, ya que el contenido a
+    presentar refleja una agrupación de datos. Para ello vamos a utilizar el atributo <code>colspan</code> sobre el
+    elemento <code>td</code> de la celda.</p>
+
+  <p>Así indicaremos que el <code>colspan</code> de esa celda es 2. Ya que ocupa dos celdas.</p>
+
+  <table border>
+    <tr>
+      <td colspan="2">Mayo</td>
+      <td colspan="2">Junio</td>
+    </tr>
+    <tr>
+      <td>Ingresos</td>
+      <td>Gastos</td>
+      <td>Ingresos</td>
+      <td>Gastos</td>
+    </tr>
+    <tr>
+      <td>250 usd</td>
+      <td>100 usd</td>
+      <td>400 usd</td>
+      <td>200usd</td>
+    </tr>
+  </table>
+
+  <h3>Código:</h3>
+  <pre><code class="language-html">
+      &lt;table border&gt;
+        &lt;tr&gt;
+          &lt;td colspan="2"&gt;Mayo&lt;/td&gt;
+          &lt;td colspan="2"&gt;Junio&lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;
+          &lt;td&gt;Ingresos&lt;/td&gt;
+          &lt;td&gt;Gastos&lt;/td&gt;
+          &lt;td&gt;Ingresos&lt;/td&gt;
+          &lt;td&gt;Gastos&lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;
+          &lt;td&gt;250 usd&lt;/td&gt;
+          &lt;td&gt;100 usd&lt;/td&gt;
+          &lt;td&gt;400 usd&lt;/td&gt;
+          &lt;td&gt;200usd&lt;/td&gt;
+        &lt;/tr&gt;
+      &lt;/table&gt;
+    </code></pre>
+
+  <p>De igual manera nos puede suceder en sentido horizontal. Es decir, que queramos que una celda ocupe 3 filas.</p>
+
+  <table border>
+    <tr>
+      <td rowspan="3">Mis Gastos</td>
+      <td colspan="2">Mayo</td>
+      <td colspan="2">Junio</td>
+    </tr>
+    <tr>
+      <td>Ingresos</td>
+      <td>Gastos</td>
+      <td>Ingresos</td>
+      <td>Gastos</td>
+    </tr>
+    <tr>
+      <td>250 usd</td>
+      <td>100 usd</td>
+      <td>400 usd</td>
+      <td>200usd</td>
+    </tr>
+  </table>
+
+  <h3>Código:</h3>
+  <pre><code class="language-html">
+      &lt;table border&gt;
+        &lt;tr&gt;
+          &lt;td rowspan="3"&gt;Mis Gastos&lt;/td&gt;
+          &lt;td colspan="2"&gt;Mayo&lt;/td&gt;
+          &lt;td colspan="2"&gt;Junio&lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;
+          &lt;td&gt;Ingresos&lt;/td&gt;
+          &lt;td&gt;Gastos&lt;/td&gt;
+          &lt;td&gt;Ingresos&lt;/td&gt;
+          &lt;td&gt;Gastos&lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;
+          &lt;td&gt;250 usd&lt;/td&gt;
+          &lt;td&gt;100 usd&lt;/td&gt;
+          &lt;td&gt;400 usd&lt;/td&gt;
+          &lt;td&gt;200usd&lt;/td&gt;
+        &lt;/tr&gt;
+      &lt;/table&gt;
+    </code></pre>
+
+
+  <h3>Grupos de Filas</h3>
+
+  <p>Ya hemos visto que las tablas se van definiendo por filas mediante el elemento <code>tr</code>. Pues dentro de HTML
+    podemos agrupar estas filas por funcionalidad.</p>
+
+  <table border>
+    <thead>
+      <tr>
+        <td>Mes</td>
+        <td>Enero</td>
+        <td>Febrero</td>
+      </tr>
+    </thead>
+    <tfoot>
+      <tr>
+        <td>Total</td>
+        <td>15</td>
+        <td>25</td>
+      </tr>
+    </tfoot>
+    <tbody>
+      <tr>
+        <td>Agua</td>
+        <td>10</td>
+        <td>15</td>
+      </tr>
+      <tr>
+        <td>Gas</td>
+        <td>5</td>
+        <td>10</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <h3>Código:</h3>
+  <pre><code class="language-html">
+      &lt;table border&gt;
+        &lt;thead&gt;
+          &lt;tr&gt;
+            &lt;td&gt;Mes&lt;/td&gt;
+            &lt;td&gt;Enero&lt;/td&gt;
+            &lt;td&gt;Febrero&lt;/td&gt;
+          &lt;/tr&gt;
+        &lt;/thead&gt;
+        &lt;tfoot&gt;
+          &lt;tr&gt;
+            &lt;td&gt;Total&lt;/td&gt;
+            &lt;td&gt;15&lt;/td&gt;
+            &lt;td&gt;25&lt;/td&gt;
+          &lt;/tr&gt;
+        &lt;/tfoot&gt;
+        &lt;tbody&gt;
+          &lt;tr&gt;
+            &lt;td&gt;Agua&lt;/td&gt;
+            &lt;td&gt;10&lt;/td&gt;
+            &lt;td&gt;15&lt;/td&gt;
+          &lt;/tr&gt;
+          &lt;tr&gt;
+            &lt;td&gt;Gas&lt;/td&gt;
+            &lt;td&gt;5&lt;/td&gt;
+            &lt;td&gt;10&lt;/td&gt;
+          &lt;/tr&gt;
+        &lt;/tbody&gt;
+      &lt;/table&gt;
+    </code></pre>
+
+  <ul>
+    <li>Cabecera, representada por el elemento <strong><code>thead</code></strong>.</li>
+    <li>Cuerpo, representada por el elemento <strong><code>tbody</code></strong>.</li>
+    <li>Pie, representada por el elemento <strong><code>tfoot</code></strong>.</li>
+  </ul>
+
+  <p>Es importante saber que no es necesario que aparezcan en ese orden dentro de la tabla, este podría ser alterados.
+    Si bien el navegador si que las representará en dicho orden.</p>
+
+  <hr>
+
+  <h2>Citas</h2>
+  <p>El elemento <code>blockquote</code> es un elemento que nos permite crear una cita.</p>
+
+  <blockquote>
+    <p>Lo que vemos cambia lo que sabemos. Lo que conocemos cambia lo que vemos.</p>
+    <cite>
+      - J. Piaget
+    </cite>
+  </blockquote>
+
+  <h3>Código:</h3>
+  <pre><code class="language-html">
+      &lt;blockquote&gt;
+        &lt;p&gt;Lo que vemos cambia lo que sabemos. Lo que conocemos cambia lo que vemos.&lt;/p&gt;
+        &lt;cite&gt;
+          - J. Piaget
+        &lt;/cite&gt;
+      &lt;/blockquote&gt;
+    </code></pre>
+
+  <hr>
+
+  <h2>Abreviaturas</h2>
+  <p>Otro elemento bastante común que encontrarás cuando busques en la Web es <code>abbr</code>, se usa para envolver
+    una abreviatura o acrónimo, y proporcionar una expansión completa del término (incluida dentro de un atributo
+    <code>title</code>).
+  </p>
+
+  <p>
+    <abbr title="Lenguaje de marcado de hipertexto">HTML</abbr>
+    es un lenguaje de marcado de hipertexto.
+  </p>
+
+  <h3>Código:</h3>
+  <pre><code class="language-html">
+      &lt;p&gt;
+        &lt;abbr title="Lenguaje de marcado de hipertexto"&gt;HTML&lt;/abbr&gt;
+        es un lenguaje de marcado de hipertexto.
+      &lt;/p&gt;
+    </code></pre>
+
+  <hr>
+
+  <h2>Marcar la información de contacto</h2>
+
+  <p>HTML tiene un elemento para marcar la información de contacto <code>address</code>. Este simplemente envuelve tus
+    datos de contacto, por ejemplo:</p>
+
+  <address>
+    <p>
+      México.<br>
+      Cancún,<br>
+      Quintana Roo.
+    </p>
+
+    <ul>
+      <li>Tel: 01234 567 890</li>
+      <li>Email: me@grim-mex.co.es_MX</li>
+    </ul>
+  </address>
+
+  <h3>Código:</h3>
+  <pre><code class="language-html">
+          &lt;address&gt;
+            &lt;p&gt;
+              México.&lt;br&gt;
+              Cancún,&lt;br&gt;
+              Quintana Roo.
+            &lt;/p&gt;
+          
+            &lt;ul&gt;
+              &lt;li&gt;Tel: 01234 567 890&lt;/li&gt;
+              &lt;li&gt;Email: me@grim-mex.co.es_MX&lt;/li&gt;
+            &lt;/ul&gt;
+          &lt;/address&gt;
+        </code></pre>
+
+  <hr>
+
+  <h2>Superíndice y subíndice</h2>
+
+  <p>En ocasiones, necesitarás utilizar superíndice y subíndice al marcar elementos como fechas, fórmulas químicas y
+    ecuaciones matemáticas para que tengan el significado correcto. Los elementos <code>sup</code> y <code>sub</code> se
+    ocupan de ello. Por ejemplo:</p>
+
+  <p>La fórmula química del agua es H<sub>2</sub>O.</p>
+  <p>Si x<sup>2</sup> es 9, x debe ser igual 3 o -3.</p>
+
+  <h3>Código:</h3>
+  <pre><code class="language-html">
+        &lt;p&gt;La fórmula química del agua es H&lt;sub&gt;2&lt;/sub&gt;O.&lt;/p&gt;
+        &lt;p&gt;Si x&lt;sup&gt;2&lt;/sup&gt; es 9, x debe ser igual 3 o -3.&lt;/p&gt;
+      </code></pre>
+
+
+  <hr>
+
+  <h2>Representación del código informático</h2>
+
+  <ul>
+    <li><strong><code>&lt;code&gt;</code></strong>: Para marcar fragmentos genéricos de código informático.</li>
+    <li><strong><code>&lt;pre&gt;</code></strong>: Para respetar los espacios en blanco (en general, en los bloques de
+      código), si utilizas la sangría o diversos espacios en blanco consecutivos dentro de un texto, los navegadores los
+      ignorarán y no se mostrarán en la página. Sin embargo, si delimitas el texto con las etiquetas
+      <strong><code>&lt;pre&gt;</code></strong> <strong><code>&lt;/pre&gt;</code></strong>, los espacios en blanco se
+      representarán de forma idéntica a como se ven en tu editor de texto.
+    </li>
+    <li><strong><code>&lt;var&gt;</code></strong>: Para marcar específicamente nombres de variables.</li>
+    <li><strong><code>&lt;kbd&gt;</code></strong>: Para marcar entradas de teclado (y de otro tipo) en el ordenador.
+    </li>
+    <li><strong><code>&lt;samp&gt;</code></strong>: Para marcar la salida de un programa de ordenador.</li>
+  </ul>
+
+  <h3>Código:</h3>
+  <pre><code class="language-html">
+    &nbsp;&lt;pre&gt;<br />
+    &nbsp;&nbsp;&nbsp;let para = document.querySelector('p');<br />
+    <br />
+    &nbsp;&nbsp;&nbsp;para.onclick = function() {<br />
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;alert('&iexcl;Guau!, &iexcl;deja de apretar!');<br />
+    &nbsp;&nbsp;&nbsp;}<br />
+    &nbsp;&lt;/pre&gt;<br />
+    <br />
+    &nbsp;&lt;p&gt;No debes utilizar elementos de presentaci&oacute;n como &lt;code&gt;&amp;lt;font&amp;gt;&lt;/code&gt; y &lt;code&gt;&amp;lt;center&amp;gt;&lt;/code&gt;.&lt;/p&gt;<br />
+    <br />
+    &nbsp;&lt;p&gt;En el ejemplo de JavaScript anterior, &lt;var&gt;para&lt;/var&gt; representa un elemento de p&aacute;rrafo.&lt;/p&gt;<br />
+    <br />
+    <br />
+    &nbsp;&lt;p&gt;Selecciona todo el texto con &lt;kbd&gt;Ctrl&lt;/kbd&gt;/&lt;kbd&gt;Cmd&lt;/kbd&gt; + &lt;kbd&gt;A&lt;/kbd&gt;.&lt;/p&gt;<br />
+    <br />
+    &nbsp;&lt;pre&gt;<br />
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$ &lt;kbd&gt;ping google.com&lt;/kbd&gt;<br />
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;samp&gt;PING google.com (63.245.215.20): 56 bytes de datos <br />
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;64 bytes de 63.245.215.20: icmp_seq=0 ttl=40 time=158.233 ms&lt;/samp&gt;<br />
+    &nbsp;&lt;/pre&gt;
+      </code></pre>
+
+  <pre>
+        let para = document.querySelector('p');
+    
+        para.onclick = function() {
+          alert('¡Guau!, ¡deja de apretar!');
+        }
+      </pre>
+
+  <p>No debes utilizar elementos de presentación como <code>&lt;font&gt;</code> y <code>&lt;center&gt;</code>.</p>
+
+  <p>En el ejemplo de JavaScript anterior, <var>para</var> representa un elemento de párrafo.</p>
+
+
+  <p>Selecciona todo el texto con <kbd>Ctrl</kbd>/<kbd>Cmd</kbd> + <kbd>A</kbd>.</p>
+
+  <pre>
+          $ <kbd>ping google.com</kbd>
+          <samp>PING google.com (63.245.215.20): 56 bytes de datos 
+            64 bytes de 63.245.215.20: icmp_seq=0 ttl=40 time=158.233 ms</samp>
+      </pre>
+
+  <hr>
+
+  <h2>Multimedia e inserción</h2>
+
+  <p>Hemos visto mucho texto hasta ahora en este curso, pero la web sería realmente aburrida solo usando textos.
+    ¡Comencemos observando como hacer que la web cobre vida, con mucho más contenido interesante! Este módulo te
+    acompañará a explorar maneras de usar HTML para incluir multimedia a tus páginas web, y las diferentes formas en la
+    que podrás hacerlo, incluyendo como enlazar videos, audios e incluso otras páginas webs.</p>
+
+  <h3>Imágenes en HTML</h3>
+
+  <p>El uso de imágenes dentro de una página web tiene que hacerse con cautela, ya que cada imagen que pongamos en
+    nuestra web incrementará el tamaño (peso) de la página. Por lo cual se verá afectado el tiempo de descarga de la
+    página.</p>
+
+  <p>Para poner una imagen simple en una página web, utilizamos el elemento <code>img</code>. Se trata de un elemento
+    vacío (lo que significa que no contiene texto o etiqueta de cierre) que requiere de por lo menos de un atributo para
+    ser utilizado: src (a veces denominado por su nombre completo, source). El atributo src contiene una ruta que apunta
+    a la imagen que quieres poner en la página, que puede ser una URL relativa o absoluta.</p>
+
+  <img src="bg.png">
+
+  <h3>Código:</h3>
+  <pre><code class="language-html">
+    &lt;!-- absoluta --&gt;
+    &nbsp;&lt;img src="bg.png"&gt;<br>
+    &lt;!-- relativa --&gt;
+    &nbsp;&lt;img src="assets/img/bg.png" alt="imagen"&gt;
+      </code></pre>
+
+  <p>El próximo atributo que veremos es <code>alt</code>. Su valor debe ser una descripción textual de la imagen para
+    usarla en situaciones en que la imagen no puede ser vista/mostrada o tarde demasiado en mostrarse por una conexión
+    lenta a internet. Por ejemplo, nuestro código anterior podría modificarse así:</p>
+
+  <img src="bg.png" alt="imagen">
+
+  <h3>Código:</h3>
+  <pre><code class="language-html">
+    &nbsp;&lt;img src="bg.png" alt="imagen"&gt;
+      </code></pre>
+
+  <p>Piensa que esto es útil en varios casos. Por ejemplo, si por algún problema técnico no se puede cargar la imagen,
+    el navegador mostrará en su espacio el texto alternativo, lo cual dará al usuario una idea de lo que iba en ese
+    sitio. Otra cosa útil es para cuando nuestra página sea utilizada por personas discapacitadas con problemas de
+    visibilidad. En este caso estas personas disponen de herramientas que le van leyendo la página y cuando llegan a una
+    imagen leen el contenido que encuentran en el atributo alt. Es por ello que el texto alternativo que insertemos en
+    la imagen debe de ser bastante descriptivo de la misma.</p>
+
+  <p>El tamaño de la imagen puede ser especificado en pixels o en porcentajes. En caso de omitir la unidad se utilizará
+    el pixel.</p>
+
+  <pre><code class="language-html">
+    &lt;img src=&quot;foto.jpg&quot; alt=&quot;foto&quot; width=&quot;100&quot; height=&quot;100&quot;&gt;<br />
+    &lt;img src=&quot;foto.jpg&quot; alt=&quot;foto&quot; width=&quot;100px&quot; height=&quot;100px&quot;&gt;<br />
+    &lt;img src=&quot;foto.jpg&quot; alt=&quot;foto&quot; width=&quot;50%&quot; height=&quot;50%&quot;&gt;
+  </code></pre>
+
+  <p>Al igual que con los enlaces, también puedes añadir atributos <code>title</code> a las imágenes para proporcionar
+    más información de ayuda si es necesario.</p>
+
+  <p>Los elementos HTML5 <code>figure</code> y <code>figcaption</code>. Se crearon exactamente para proporcionar un
+    contenedor semántico para las figuras y vincular claramente la figura con el pie.</p>
+
+  <figure>
+    <img src="bg.png" alt="Persona observando dos ventanas">
+    <figcaption>Imagen represetando HTML.</figcaption>
+  </figure>
+
+  <h3>Código:</h3>
+  <pre><code class="language-html">
+    &lt;figure&gt;
+      &lt;img src=&quot;bg.png&quot; alt=&quot;imagen&quot;&gt;
+      &lt;figcaption&gt;Imagen represetando HTML.&lt;/figcaption&gt;
+    &lt;/figure&gt;
+      </code></pre>
+
+  <p>El elemento <code>figcaption</code> dice al navegador, o a alguna tecnología de apoyo, que el texto que contiene
+    describe la imagen que está contenida en el elemento <code>figure</code>.</p>
+
+  <hr>
+
+  <h2>Audio y video en la web</h2>
+
+  <p>A partir de HTML5 se estándariza el uso de audio y vídeo.</p>
+
+  <h3>El elemento <code>video</code></h3>
+
+  <p>El elemento <code>video</code> nos permite incrustar video fácilmente. Un ejemplo muy simple luce como lo
+    siguiente:</p>
+
+  <video src="assets/video/video.mp4" controls>
+    <p>Tu navegador no soporta vídeos HTML5.</p>
+  </video>
+
+  <h3>Código:</h3>
+  <pre><code class="language-html">
+    &lt;video src=&quot;assets/video/video.mp4&quot; controls width=&quot;100%&quot;&gt;&lt;/video&gt;
+      </code></pre>
+
+  <h3>Atributos del vídeo</h3>
+
+  <ul>
+    <li>Fichero del vídeo: Para poder indicar dónde está el fichero que contiene el vídeo deberemos de utilizar el
+      atributo <strong><code>src</code></strong>. Este atributo recibirá como valor el nombre del fichero.</li>
+    <li>Ancho y alto del vídeo: Aunque como todo elemento HTML podemos modificar la apariencia mediante el lenguaje CSS,
+      el elemento vídeo nos ofrece los atributos <strong><code>widht</code></strong> y
+      <strong><code>height</code></strong> para poder definir el ancho y alto del vídeo respetivamente.
+    </li>
+    <li>Inicio automático del vídeo: Si queremos que el vídeo se inicie de forma automática una vez que se carge el
+      documento HTML5 deberemos de utilizar el atributo <strong><code>autoplay</code></strong>.</li>
+    <li>Vídeo en bucle: En el caso de que queramos que el vídeo se reproduzca en bulce una y otra vez usaremos el
+      atributo <strong><code>loop</code></strong>.</li>
+    <li>Vídeo sin sonido: Otra opción es que el vídeo se ejecute sin sonido. Esto lo conseguimos apoyándonos en el
+      atributo <strong><code>muted</code></strong>.</li>
+    <li>Cartel del vídeo: Antes de que se inicie el vídeo podemos poner una imagen de muestra (o cartel). Para ello
+      vamos a utilizar el atributo <strong><code>poster</code></strong>. El atributo
+      <strong><code>poster</code></strong> recibirá una URL con el nombre del fichero que queremos utilizar como cartel
+      del vídeo.
+    </li>
+  </ul>
+
+  <h3>Usando el atributo poster</h3>
+  <video src="assets/video/video.mp4" poster="assets/img/cover.jpg" controls>
+    <p>Tu navegador no soporta vídeos HTML5.</p>
+  </video>
+
+  <h3>Código:</h3>
+  <pre><code class="language-html">
+    &lt;video src=&quot;assets/video/video.mp4&quot; poster=&quot;assets/img/cover.jpg&quot; controls&gt;&lt;/video&gt;
+      </code></pre>
+
+  <h3>Múltiples orígenes y formatos del vídeo</h3>
+
+  <p>Los navegadores utilizan los codecs para poder descomprimir el contenido de los contenedores y poder reproducir el
+    vídeo y audio. Si el navegador no tiene un codec que soporte el formato, no se podrá reproducir el vídeo y/o audio.
+  </p>
+
+  <p>Esta situación nos obliga a tener diferentes contenedores de formato atendiendo al navegador hace que nuestros
+    documentos HTML5 tengan que permitir cargar varios ficheros en varios formatos.</p>
+
+  <p>Esto lo coseguimos mediante el elemento source. El elemento source es un elemento anidado al elemento video y nos
+    sirve para enlazar diferentes ficheros de vídeo en formatos diferentes.</p>
+
+  <video controls>
+    <source src="assets/video/video.mp4" type="video/mp4" />
+    <source src="assets/video/video.webm" type="video/webm" />
+    <p>Su navegador no soporta vídeos HTML5.</p>
+  </video>
+
+  <h3>Código:</h3>
+  <pre><code class="language-html">
+    &lt;video controls&gt;
+      &lt;source src=&quot;assets/video/video.mp4&quot; type=&quot;video/mp4&quot;&gt;
+      &lt;source src=&quot;assets/video/video.webm&quot; type=&quot;video/webm&quot;&gt;
+    &lt;/video&gt;
+      </code></pre>
+
+  <h3>El elemento <code>audio</code></h3>
+
+  <p>El elemento <code>audio</code> funciona exactamente de la misma forma que el elemento <code>video</code>, con
+    algunas pequeñas diferencias como se describe a continuación.</p>
+
+  <audio controls>
+    <source src="assets/audio/audio.ogg" type="audio/ogg">
+    <source src="assets/audio/audio.mp3" type="audio/mp3">
+    <p>Tu navegador no soporta el tag audio</p>
+  </audio>
+
+  <h3>Código:</h3>
+  <pre><code class="language-html">
+    &lt;audio controls&gt;
+      &lt;source src=&quot;assets/audio/audio.ogg&quot; type=&quot;audio/ogg&quot;&gt;
+      &lt;source src=&quot;assets/audio/audio.mp3&quot; type=&quot;audio/mp3&quot;&gt;
+    &lt;/audio&gt;
+      </code></pre>
+
+  <p>Esto ocupa menos espacio que un reproductor de video, ya que no hay un componente visual; solo necesita mostrar los
+    controles para reproducir el audio. Otras diferencias con respecto al video HTML5 son las siguentes:</p>
+
+  <ul>
+    <li>El elemento <strong><code>audio</code></strong> no soporta los atributos width/height, de nuevo, no hay un
+      componente visual, por lo que no hay nada a lo que asignar un width o height (ancho o alto).</li>
+    <li>Tampoco es compatible con el atributo poster, de nuevo, no hay componente visual.</li>
+  </ul>
+
+  <p>Además de esto, <code>audio</code> admite las mismas características que <code>video</code></video></p>
+
+  <hr>
+
+  <h2>Iframe</h2>
+
+  <p>Los elementos <code>iframe</code> están diseñados para permitirte incrustar documentos web en el documento actual.
+    Esto es excelente para incorporar contenido de terceros en tu sitio web sobre el que no tengas control directo y no
+    quieras tener que implementar tu propia versión, como vídeo de porveedeores de vídeo en línea, sistemas de
+    comentarios como Disqus, mapas de proveedores de mapas en línea, banners publicitarios, etc.</p>
+
+  <iframe src="https://htmlreference.io/" frameborder="0" allowfullscreen sandbox>
+    <p>Tu navegador no soporta iframes.</p>
+  </iframe>
+
+  <h3>Código:</h3>
+  <pre><code class="language-html">
+    &lt;iframe src=&quot;https://htmlreference.io/&quot; frameborder=&quot;0&quot; allowfullscreen sandbox&gt;&lt;/iframe&gt;
+      </code></pre>
+
+  <p>Este ejemplo incluye los elementos básicos necesarios para usar un <code>iframe</code>:</p>
+
+  <ul>
+    <li><strong><code>allowfullscreen</code></strong> Si está configurado, el <code>iframe</code> se puede colocar en
+      modo pantalla completa.</li>
+    <li><strong><code>frameborder</code></strong> Si se establece en 1, esto le indica al navegador que dibuje un borde
+      entre este marco y otros marcos, que es el comportamiento predeterminado. 0 elimina el borde. Usar esto ya no es
+      realmente recomendable, ya que el mismo efecto se puede lograr mejor usando border: none; en tu CSS.</li>
+    <li><strong><code>src</code></strong> Este atributo, como con <code>video</code>/<code>img</code>, contiene una ruta
+      que apunta a la URL del documento que se va a incrustar.</li>
+    <li><strong><code>width</code></strong> y <strong><code>height</code></strong> Estos atributos especifican el ancho
+      y la altura que quieres que tenga el iframe.</li>
+    <li><strong><code>sandbox</code></strong> Este atributo, que funciona en navegadores un poco más modernos que el
+      resto de la funciones de <code>iframe</code> (por ejemplo IE 10 y superior) solicita una mayor configuración de
+      seguridad.</li>
+  </ul>
+
+  <iframe src="documento.html" frameborder="0" width="100%" allowfullscreen sandbox>
+    <p>Tu navegador no soporta iframes.</p>
+  </iframe>
+
+  <h3>Código:</h3>
+  <pre><code class="language-html">
+    &lt;iframe src=&quot;documento.html&quot; frameborder=&quot;0&quot; width=&quot;100%&quot; allowfullscreen sandbox&gt;&lt;/iframe&gt;
+      </code></pre>
+
+  <h3>Inframe de youtube</h3>
+
+  <iframe width="100%" height="300px" src="https://www.youtube.com/embed/nNIakGLHreg"
+    title="¿Qué sucede durante la fase de prueba?  las primeras 4 semanas en Academlo / Academlo experiencia"
+    frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+    allowfullscreen></iframe>
+  <br><br>
+
+  <h3>Inframe de vimeo</h3>
+
+  <iframe title="vimeo-player" src="https://player.vimeo.com/video/716110683?h=fa432c646d" width="100%" height="300px"
+    frameborder="0" allowfullscreen></iframe>
+
+  <h3>Inframe de google maps</h3>
+
+  <iframe
+    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d59750.53047366911!2d-100.4452365099388!3d20.61221376075131!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85d35b8fdc5b9255%3A0x97b094aa561b832f!2sSantiago%20de%20Quer%C3%A9taro%2C%20Qro.!5e0!3m2!1ses!2smx!4v1658513143130!5m2!1ses!2smx"
+    width="100%" height="300" frameborder="0" allowfullscreen loading="lazy"
+    referrerpolicy="no-referrer-when-downgrade"></iframe>
+
+  <br><br>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.6.0/highlight.min.js"></script>
+  <script>hljs.highlightAll();</script>
+</body>
+
+</html>

@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>
+    <!DOCTYPE html>
+    <html lang="en">
+
+    <head>
+      <meta charset="UTF-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Anatomía de un documento HTML</title>
+      <link rel="stylesheet" href="https://highlightjs.org/static/demo/styles/monokai-sublime.css">
+      <style>
+        body {
+          margin: 0;
+          padding: 0 20px;
+          border-top: 4px solid #ff6200;
+          background-color: #111;
+          color: #aaa;
+          font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif
+        }
+
+        h1,
+        h2 {
+          color: #e0e0e0;
+        }
+
+        ul li strong {
+          color: #f92672;
+        }
+      </style>
+    </head>
+
+<body>
+  <h1>Anatomía de un documento HTML</h1>
+
+  <pre><code class="language-html">
+    &lt;!DOCTYPE html&gt;<br />
+    &lt;html lang=&quot;en&quot;&gt;<br />
+    &lt;head&gt;<br />
+    &nbsp;&nbsp;&lt;meta charset=&quot;UTF-8&quot;&gt;<br />
+    &nbsp;&nbsp;&lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;<br />
+    &nbsp;&nbsp;&lt;title&gt;Titulo de la p&aacute;gina actual&lt;/title&gt;<br />
+    &nbsp;&nbsp;&lt;meta name=&quot;description&quot; content=&quot;No mas de 165 caracteres&quot;&gt;<br />
+    &nbsp;&nbsp;&lt;link rel=&quot;shortcut icon&quot; href=&quot;favicon.ico&quot; type=&quot;image/x-icon&quot;&gt;<br />
+    &lt;/head&gt;<br />
+    &lt;body&gt;<br />
+    &lt;/body&gt;<br />
+    &lt;/html&gt;
+  </code></pre>
+
+  <h2>Aquí tenemos:</h2>
+  <ul>
+    <li><strong>&lt;!DOCTYPE html&gt;:</strong> Declaración del tipo de documento es una instrucción especial que va al
+      inicio de nuestro
+      documento HTML y que permite al navegador entender qué versión de HTML estamos utilizando.</li>
+    <li><strong>&lt;html&gt;:</strong> Representa la raiz de un documento HTML (root element). El resto de elementos
+      descienden de este elemento.</li>
+    <li><strong>lang=&quot;en&quot;:</strong> Los elementos también pueden tener atributos. Los atributos contienen
+      información extra sobre el elemento que no se mostrará en el contenido. En este caso, el atributo lang sirve para
+      definir el lenguaje en que están escritos los elementos o el lenguaje en el cual deberían de estar escritos.</li>
+    <li><strong>&lt;head&gt;:</strong> Provee información general (metadatos) acerca del documento, incluyendo su título
+      y enlaces a scripts y hojas de estilos. No es visible en la página</li>
+    <li><strong>&lt;meta&gt;</strong> Meta de "metainformation", Sirve para aportar información sobre el documento. Los
+      atributos debe indicarlo el autor, aunque los mas comunes son <strong><em>name</em></strong> nombre al que se
+      asocia la metainformación y <strong><em>content</em></strong> los datos que se quieren asociar a name.</li>
+    <li><strong>charset=&quot;UTF-8&quot;</strong> Especifica el tipo de caracteres que se utilizan en el documento.
+    </li>
+    <li><strong>&lt;meta name=&quot;viewport&quot; content=&quot;width=device-width,
+        initial-scale=1.0&quot;&gt;</strong> Especifica el tamaño
+      de la ventana del navegador. Importante para hacer nuestras páginas responsivas</li>
+    <li><strong>&lt;title&gt;:</strong> Este establece el título de la página, que es el título que aparece en la
+      pestaña del navegador en la que se carga la página. El título de la página también se utiliza para describir la
+      página cuando se marca como favorita. No más de 55 y 65 caracteres.</li>
+    <li><strong>&lt;body&gt;:</strong> Contiene todo el contenido que quieres mostrar a los usuarios cuando visitan tu
+      página, ya sea texto, imágenes, vídeos, juegos, pistas de audio reproducibles o cualquier otra cosa.</li>
+      <li><strong>&lt;meta name=&quot;description&quot; content=&quot;&quot;&gt;:</strong> Especifica una descripción del documento. No más de 165 caracteres.</li>
+      <li><strong>&lt;link rel=&quot;shortcut icon&quot; href=&quot;favicon.ico&quot; type=&quot;image/x-icon&quot;&gt;:</strong> Especifica el icono del documento.</li>
+  </ul>
+
+  <a href="./index.html">Regresar</a>
+  <br><br>
+
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.6.0/highlight.min.js"></script>
+  <script>hljs.highlightAll();</script>
+</body>
+
+</html>

@@ -1,0 +1,29 @@
+html {
+  font-family: sans-serif;
+  font-size: 16px;
+  box-sizing: border-box;
+}
+
+*, *::before, *::after {
+  box-sizing: inherit;
+}
+
+body {
+  max-width: 692px;
+  margin: 0 auto;
+  padding: 20px;
+  line-height: 1.5;
+}
+
+img {
+  width: 100%;
+}
+
+.img-container {
+  width: 450px;
+  margin: 0 auto;
+}
+
+.container {
+  min-height: 85vh;
+}

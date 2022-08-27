@@ -1,0 +1,72 @@
+body {
+  margin: 0;
+  padding: 0 20px;
+  background-color: #f5f5f5;
+  border-top: 4px solid royalblue;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+img {
+  max-width: 100%;
+}
+
+.contenedor__imagen {
+  max-width: 350px;
+  margin: 0 auto;
+}
+
+form {
+  margin: 0 auto;
+  width: 350px;
+  padding: 20px;
+  border-radius: 4px;
+  background-color: #fff;
+}
+
+form h2 {
+  margin-top: 0;
+  margin-bottom: 10px;
+}
+
+label {
+  display: block;
+  margin-bottom: 10px;
+}
+
+.form__error-message {
+  margin: 1rem auto;
+  width: 350px;
+  padding: 20px;
+  text-align: center;
+  border-radius: 4px;
+  background-color: #f8b1b1;
+}
+
+.form__error-message p {
+  margin: 0;
+}
+
+.login__social {
+  margin: 1rem auto;
+  width: 350px;
+  padding: 20px;
+}
+
+.login__social-link {
+  padding: 10px;
+}
+
+.login__social-link--facebook {
+  background-color: #3b5998;
+  border-radius: 8px;
+  color: #fff;
+  text-decoration: none;
+  margin-right: 10px;
+}
+
+.login__social-link--google {
+  background-color: #dd4b39;
+  border-radius: 8px;
+  color: #fff;
+  text-decoration: none;
+}

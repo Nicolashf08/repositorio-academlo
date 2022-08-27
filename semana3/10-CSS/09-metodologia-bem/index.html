@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://highlightjs.org/static/demo/styles/monokai-sublime.css">
+  <title>Metodología BEM</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <header>
+    <h1>Metodología BEM</h1>
+    <p>BEM es una metodología de nomenclatura para nombrar las clases de tus elementos HTML.</p>
+  </header>
+
+  <main>
+    <section>
+      <h2>¿Cómo funciona BEM?</h2>
+      <p>El objetivo de BEM es dar mucha más transparencia y claridad en tu estructura HTML y CSS.</p>
+
+      <p><strong>BEM</strong> son tres siglas.</p>
+      <ul>
+        <li><strong>B</strong> de Bloque.</li>
+        <li><strong>E</strong> de Elemento.</li>
+        <li><strong>M</strong> de Modificador.</li>
+      </ul>
+
+      <p>Aquí una explicación másdetallada sobre estos tres conceptos de <strong>BEM</strong>:</p>
+      <div class="contenedor__bem">
+        <div class="contenido bloque">
+          <h2>B</h2>
+          <div class="contenido__interior">
+            <h2 class="contenido__text">Bloque</h2>
+            <p class="contenido__descripcion">Es el contenedor principal del componente y debe ser una entidad propia
+              que no dependa de ningún otro bloque. Esto no quiere decir que no podamos tener un bloque dentro de otro,
+              sino que estos serán independientes entre si, cada bloque tendra sus propios elementos con sus diferentes
+              modificadores (bloque).</p>
+          </div>
+        </div>
+        <div class="contenido elemento">
+          <h2>E</h2>
+          <div class="contenido__interior">
+            <h2 class="contenido__text">Elemento</h2>
+            <p class="contenido__descripcion">Son las partes internas que conforman el componente y se usa para ir
+              dividiendo el bloque en segmentos más pequeños, se debe colocar el nombre del bloque al que pertenece
+              seguido por 2 guiones bajos (bloque__elemento).</p>
+          </div>
+        </div>
+        <div class="contenido modificador">
+          <h2>M</h2>
+          <div class="contenido__interior">
+            <h2 class="contenido__text">Modificador</h2>
+            <p class="contenido__descripcion">Son variaciones del bloque o del elemento y sirve para modificar algunas
+              propiedades ya sea del bloque o algun elemento en particular, estos se usan agregando un doble guion medio
+              justo después del nombre del elemento o bloque que se quiere modificar (bloque__elemento--modificador).
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <h3>Así se vería el HTML:</h3>
+
+      <pre>
+        <code class="language-html">
+          &lt;div class=&quot;bloque&quot;&gt;<br />
+          &nbsp;&nbsp;&lt;div class=&quot;bloque__elemento&quot;&gt;Elemento 1&lt;/div&gt;<br />
+          &nbsp;&nbsp;&lt;div class=&quot;bloque__elemento&quot;&gt;Elemento 2&lt;/div&gt;<br />
+          &nbsp;&nbsp;&lt;div class=&quot;bloque__elemento bloque__elemento--modificador&quot;&gt;Elemento 3&lt;/div&gt;<br />
+          &lt;/div&gt;
+        </code>
+      </pre>
+
+      <h3>El CSS siguiendo BEM</h3>
+
+      <pre>
+        <code class="language-css">
+          .bloque { color: inherit; }<br />
+          .bloque__elemento { color: inherit; }<br />
+          .bloque__elemento--modificador { color: inherit; }
+        </code>
+      </pre>
+
+      <p>Los nombres de las clases con convención BEM, pueden tener la siguiente sintaxis:</p>
+
+      <ul>
+        <li>[bloque]</li>
+        <li>[bloque]__[elemento]</li>
+        <li>[bloque]--[modificador]</li>
+        <li>[elemento]--[modificador]</li>
+        <li>[bloque]__[elemento]--[modificador]</li>
+      </ul>
+    </section>
+  </main>
+
+  <script>
+    const contenidos = document.querySelectorAll('.contenido')
+
+    const removeActive = () => contenidos.forEach(contenido => contenido.classList.remove('expandir'))
+
+    document.addEventListener('click', (e) => {
+      if (e.target.closest('.contenido')) {
+        removeActive()
+        e.target.closest('.contenido').classList.add('expandir')
+      } else {
+        removeActive()
+      }
+    })
+  </script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.6.0/highlight.min.js"></script>
+  <script>hljs.highlightAll();</script>
+</body>
+
+</html>

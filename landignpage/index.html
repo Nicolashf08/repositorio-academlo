@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Landing Page</title>
+  <link href='https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css' rel='stylesheet'>
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+
+<body translate="no">
+  <div class="navbar">
+    <div class="navbar__container">
+
+      <div class="brand">
+        <a class="brand__link" href="#">
+          <i class='bx bx-expand-horizontal brand__icon'></i>
+          <span class="brand__name">Nombre</span>
+        </a>
+      </div>
+
+      <div id="menu" class="menu">
+        <i class='bx bx-x menu__icon menu--close'></i>
+        <nav class="menu__list">
+          <a class="menu__link" href="#">Home</a>
+          <a class="menu__link" href="#about">About</a>
+          <a class="menu__link" href="#services">Services</a>
+          <a class="menu__link" href="#projects">Projects</a>
+          <a class="menu__link" href="#contact">Contact</a>
+        </nav>
+      </div>
+
+      <i class='bx bx-menu menu__icon menu--open'></i>
+    </div>
+  </div>
+
+  <main class="wrapper">
+
+    <section id="about" class="about grid">
+      <div class="about__item">
+        <div class="info flex items-center">
+          <img class="info__image" src="https://schmidmayring.de/wp-content/uploads/2022/04/pngwing.com-2.png" alt="Profile image">
+          <div class="info__content">
+            <h2 class="info__name">My Name</h2>
+            <p class="info__description">Lorem ipsum dolor, sit amet consectetur adipisicing elit.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="about__item">
+        <div class="skills">
+          <div class="skills__item">
+            <h3 class="skills__title">Habilidades Blandas:</h3>
+            <p class="skills__text">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Illo veritatis ipsam praesentium dolorem unde soluta ea, nam modi quis quasi delectus eius natus asperiores numquam libero non quidem sed quam!</p>
+          </div>
+
+          <div class="skills__item">
+            <h3 class="skills__title">Habilidades Técnicas:</h3>
+
+            <div class="skills__container">
+              <div class="skills__tech">
+                <i class='bx bxl-html5'></i>
+                <p class="skills__text--icon">HTML</p>
+              </div>
+
+              <div class="skills__tech">
+                <i class='bx bxl-css3'></i>
+                <p class="skills__text--icon">CSS</p>
+              </div>
+
+              <div class="skills__tech">
+                <i class='bx bxl-javascript' ></i>
+                <p class="skills__text--icon">JavaScript</p>
+              </div>
+
+              <div class="skills__tech">
+                <i class='bx bxl-github' ></i>
+                <p class="skills__text--icon">GitHub</p>
+              </div>
+
+              <div class="skills__tech">
+                <i class='bx bxl-visual-studio' ></i>
+                <p class="skills__text--icon">VS Code</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="about__item">
+        <div class="stack">
+          <h2 class="stack__title">Backend</h2>
+          <i class='bx bxl-nodejs'></i>
+        </div>
+      </div>
+
+      <div class="about__item">
+        <div class="stack">
+          <h2 class="stack__title">Frontend</h2>
+          <i class='bx bxl-react' ></i>
+        </div>
+      </div>
+    </section>
+
+    <section id="services" class="services">
+      <h2 class="services__title">Services</h2>
+    </section>
+
+    <section id="projects" class="projects">
+      <h2 class="projects__title">Projects</h2>
+    </section>
+
+    <section id="contact" class="contact">
+      <h2 class="contact__title">Contact</h2>
+    </section>
+  </main>
+
+  <script src="assets/js/main.js"></script>
+</body>
+
+</html>

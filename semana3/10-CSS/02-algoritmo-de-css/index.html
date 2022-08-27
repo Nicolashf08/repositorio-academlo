@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://highlightjs.org/static/demo/styles/monokai-sublime.css">
+  <title>El Algoritmo de CSS</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    ol li {
+      color: blue;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>El Algoritmo de CSS</h1>
+    <p>Es la forma en que el navegador 
+      aplica los estilos al documento HTML. Es vital 
+      entender este concepto para que entiendas como se 
+      aplican y en algunas ocasiones se sobreescriben las 
+      reglas CSS.</p>
+  </header>
+
+  <main>
+    <section>
+      <ol>
+        <li>La Cascada.</li>
+        <li>La Especificidad.</li>
+        <li>La Herencia.</li>
+      </ol>
+    </section>
+
+    <section>
+      <h2>La Cascada</h2>
+      <p>Es el mecanismo en que el navegador aplica los estilos. Y toma en cuenta lo siguiente en este orden:</p>
+      <ul>
+        <li>El User Agent (los estilos por defecto del navegador)</li>
+        <li>Los estilos especificados por el usuario.</li>
+        <li>La especificidad de las reglas.</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Especificidad</h2>
+      <p>Básicamente, la especificidad mide cuán específica es la selección de un selector.</p>
+
+      <p>La Especificidad se calcula de la siguiente forma:</p>
+
+      <table width="100%">
+        <thead width="50%" style="text-align: center;">
+          <tr>
+            <th>Selector</th>
+            <th>Especificidad</th>
+          </tr>
+        </thead>
+        <tbody width="50%">
+          <tr>
+            <td>etiquetas y pseudoelementos</td>
+            <td style="text-align: center;">0, 0, 0, 1</td>
+          </tr>
+          <tr>
+            <td>clases, atributos y pseudoclases</td>
+            <td style="text-align: center;">0, 0, 1, 0</td>
+          </tr>
+          <tr>
+            <td>indetificadores</td>
+            <td style="text-align: center;">0, 1, 0, 0</td>
+          </tr>
+          <tr>
+            <td>estilos en línea</td>
+            <td style="text-align: center;">1, 0, 0, 0</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <div class="contenedor">
+        <ul class="list">
+          <li class="list__item">Elemento 1</li>
+          <li class="list__item">Elemento 2</li>
+          <li class="list__item">Elemento 3</li>
+          <li class="list__item">Elemento 4</li>
+          <li class="list__item">Elemento 5</li>
+        </ul>
+      </div>
+    </section>
+
+    <section>
+      <h2>La Herencia</h2>
+
+      <p>La herencia también debe entenderse en este contexto: algunos valores de las propiedades CSS que se han establecido para los elementos padre los heredan los elementos hijo, pero otros no.</p>
+      
+      <div class="contenedor__principal">
+        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Expedita odio fuga officiis neque, autem aspernatur quod eligendi natus maiores explicabo libero alias rerum, similique praesentium commodi maxime ducimus repellat excepturi!</p>
+
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum dolores adipisci facere ut provident veritatis maiores omnis necessitatibus quaerat tenetur earum rem velit voluptatum nisi itaque inventore perferendis, temporibus fugit?</p>
+
+        <div class="contenedor__secundario">
+          <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Tempora eum magnam, sint laudantium rem nisi illum error a, amet ab delectus neque? Adipisci optio quod dolorum ratione incidunt reprehenderit iure.</p>
+
+          <h4>Lorem ipsum</h4>
+          <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quis deleniti incidunt sunt ipsa tempore ex laudantium ipsam deserunt corporis alias, iste nihil nulla velit dolores dolorem similique ratione, harum nesciunt?</p>
+        </div>
+      </div>
+
+      <div class="contenedor__titulo">
+        <div>
+          <h2>Titulo Centrado</h2>
+        </div>
+      </div>
+
+      <br><br>
+    </section>
+  </main>
+
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.6.0/highlight.min.js"></script>
+  <script>hljs.highlightAll();</script>
+</body>
+</html>

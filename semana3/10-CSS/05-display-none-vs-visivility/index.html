@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Display none vs Visivility</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header>
+    <h1>display vs visivility</h1>
+    <p>La propiedad display y visivility de CSS, dos propiedades interesantes que nos permitirán controlar, la forma en la que se muestra los elementos.</p>
+  </header>
+
+  <section>
+    <h2>Display</h2>
+    <p>La propiedad display nos permite elegir como se muestran los elementos en la página, podemos indicar que se muestren como elementos de línea o como elementos de bloque, además podemos indicar que no se muestre.</p>
+
+    <p>El valor none de la propiedad display hace que elemento seleccionado quede oculto en la página de resultado, de tal manera que el resto de contenido se muestra como si dicho elemento no existiera pues none hace que deje de ocupar espacio dentro de la estructura de página.</p>
+
+    <br>
+    <form id="form">
+      <h2>Contact</h2>
+      <div class="form__group">
+        <label for="name">Name</label>
+        <input type="text" id="name" name="name" placeholder="Enter your name">
+      </div>
+      <div class="form__group">
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" placeholder="Enter your email">
+      </div>
+      <div class="form__group">
+        <label for="message">Message</label>
+        <textarea name="message" id="message" cols="30" rows="10" placeholder="Enter your message"></textarea>
+      </div>
+      <div class="form__group">
+        <button type="submit">Send</button>
+      </div>
+    </form>
+
+    <div id="errors" class="form__error-message d-none">
+      <p>Error message</p>
+    </div>
+
+    <div class="login__social">
+      <a href="#" class="login__social-link login__social-link--facebook">
+        <i class="fa fa-facebook"></i>
+        <span>Login with Facebook</span>
+      </a>
+      <a href="#" class="login__social-link login__social-link--google">
+        <i class="fa fa-google"></i>
+        <span>Login with Google</span>
+      </a>
+    </div>
+  </section>
+
+  <script>
+    form.addEventListener('submit', (e)=> {
+      e.preventDefault();
+
+      errors.classList.remove('d-none');
+
+      setTimeout(() => {
+        errors.classList.add('d-none');
+      }, 3000);
+    })
+  </script>
+
+
+<section>
+  <h2>Visivility</h2>
+  <p>La propiedad visivility de CSS nos permite establecer si un elemento es visible o invisible, de acuerdo al valor que elijamos establecer:</p>
+
+  <ul>
+    <li><strong>visible</strong>: indica que el elemento es mostrado.</li>
+    <li><strong>hidden</strong>: establece que el elemento se esconde, pero los demás elementos de la página se comportan como si dicho elemento estuviese presente ahí, respetan sus dimensiones. Es como si el elemento solo fuera invisible.</li>
+    <li><strong>collapse</strong>: pensada para controlar la visibilidad de elementos de tabla, filas y columnas.</li>
+  </ul>
+  <br>
+
+  <form id="form2">
+    <h2>Contact</h2>
+    <div class="form__group">
+      <label for="name">Name</label>
+      <input type="text" id="name" name="name" placeholder="Enter your name">
+    </div>
+    <div class="form__group">
+      <label for="email">Email</label>
+      <input type="email" id="email" name="email" placeholder="Enter your email">
+    </div>
+    <div class="form__group">
+      <label for="message">Message</label>
+      <textarea name="message" id="message" cols="30" rows="10" placeholder="Enter your message"></textarea>
+    </div>
+    <div class="form__group">
+      <button type="submit">Send</button>
+    </div>
+  </form>
+
+  <div id="errors2" class="form__error-message v-hidden">
+    <p>Error message</p>
+  </div>
+
+  <div class="login__social">
+    <a href="#" class="login__social-link login__social-link--facebook">
+      <i class="fa fa-facebook"></i>
+      <span>Login with Facebook</span>
+    </a>
+    <a href="#" class="login__social-link login__social-link--google">
+      <i class="fa fa-google"></i>
+      <span>Login with Google</span>
+    </a>
+  </div>
+</section>
+
+<script>
+  form2.addEventListener('submit', (e)=> {
+    e.preventDefault();
+
+    errors2.classList.remove('v-hidden');
+
+    setTimeout(() => {
+      errors2.classList.add('v-hidden');
+    }, 3000);
+  })
+</script>
+
+</body>
+</html>

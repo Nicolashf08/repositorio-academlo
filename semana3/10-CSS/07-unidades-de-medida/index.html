@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Unidades de Medida</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header>
+    <h1>Unidades de Medida</h1>
+    <p>Las medidas en CSS se emplean, entre otras, para definir la altura, anchura y márgenes de los elementos y para establecer el tamaño de letra del texto. Todas las medidas se indican como un valor numérico entero o decimal seguido de una unidad de medida (sin ningún espacio en blanco entre el número y la unidad de medida).</p>
+  </header>
+  
+<main>
+  <section>
+    <p>CSS divide las unidades de medida en dos grupos: absolutas y relativas.</p>
+
+    <p>Las medidas <strong>relativas</strong> definen su valor en relación con otra medida, por lo que para obtener su valor real, se debe realizar alguna operación con el valor indicado. Las unidades <strong>absolutas</strong> establecen de forma completa el valor de una medida, por lo que su valor real es directamente el valor indicado.</p>
+  </section>
+
+  <section>
+    <h2>Unidades absolutas</h2>
+
+    <p>Una medida indicada mediante unidades absolutas está completamente definida, ya que su valor no depende de otro valor de referencia. A continuación se muestra la lista completa de unidades absolutas definidas por CSS y su significado:</p>
+
+    <ul>
+      <li><code>px</code>: pixeles. Un pixel equivale a unos 0.26 milímetros.</li>
+      <li><code>in</code>: pulgadas ("inches", en inglés). Una pulgada equivale a 25.4 milímetros.</li>
+      <li><code>cm</code>: centímetros. un centímetro equivale a 10 milímetros</li>
+      <li><code>mm</code>: milímetros.</li>
+      <li><code>pt</code>: puntos. Un punto equivale a 1 pulgada/72, es decir, unos 0.35 milímetros.</li>
+      <li><code>pc</code>: picas. Una pica equivale a 12 puntos, es decir, unos 4.23 milímetros.</li>
+    </ul>
+
+    <div class="contenedor__absoluta">
+      <h3>Titulo</h3>
+      <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. <strong>Modi</strong> quidem, officiis accusamus beatae debitis vel facere earum laboriosam quos dolor ducimus eaque, consectetur eius voluptatum ea in, illum at iste?</p>
+
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quam id unde labore maxime quod ipsa libero, asperiores obcaecati quaerat quis ex cum voluptate eligendi ad aliquid enim ipsum distinctio magni.</p>
+
+      <h4>Subtitulo</h4>
+      <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Adipisci veniam minus quo ad itaque <strong>recusandae</strong> debitis id reiciendis, corporis autem. <em>Atque aut adipisci</em> aliquam illo vero, voluptatibus cupiditate enim facilis!</p>
+
+    </div>
+
+    <p>La principal ventaja de las unidades absolutas es que su valor es directamente el valor que se debe utilizar, sin necesidad de realizar cálculos intermedios. Su principal desventaja es que son muy poco flexibles y no se adaptan fácilmente a los diferentes medios.</p>
+
+    <p>De todas las unidades absolutas, la única que suele utilizarse aparte de los pixeles es el punto (pt). Se trata de la unidad de medida preferida para establecer el tamaño del texto en los documentos que se van a imprimir, es decir, para el medio print de CSS.</p>
+  </section>
+
+  <section>
+    <h2>Unidades relativas</h2>
+
+    <p>La unidades relativas, a diferencia de las absolutas, no están completamente definidas, ya que su valor siempre está referenciado respecto a otro valor. A pesar de su aparente dificultad, son las más utilizadas en el diseño web por la flexibilidad con la que se adaptan a los diferentes medios.</p>
+
+    <p>A continuación se muestran las unidades de medida relativas definidas por CSS y la referencia que toma cada una para determinar su valor real:</p>
+
+    <ul>
+      <li><code>em</code>: «M». 1em = tamaño de fuente establecida en navegador, normalmente son 16px.</li>
+      <li><code>ex</code>: «X» (~0.5em). 1ex = ~ mitad del tamaño de fuente del navegador.</li>
+      <li><code>ch</code>: «zero». 1ch = tamaño de ancho del cero ( 0 ).</li>
+      <li><code>rem</code>: «root». 1rem = tamaño de fuente personalizado.</li>
+      <li><code>%</code>: Porcentaje. Relativa a herencia (concretamente, al elemento padre).</li>
+    </ul>
+
+    <p>Las unidades em y ex no han sido creadas por CSS, sino que llevan décadas utilizándose en el campo de la tipografía. Aunque no es una definición exacta, la unidad 1em equivale a la anchura de la letra M ("eme mayúscula") del tipo y tamaño de letra del elemento.</p>
+
+    <p>La unidad em hace referencia al tamaño en puntos de la letra que se está utilizando. Si se utiliza una tipografía de 12 puntos, 1em equivale a 12 puntos. El valor de 1ex se puede aproximar por 0.5 em.</p>
+    
+    <p>La unidad de medida em siempre hace referencia al tamaño de letra del elemento. Por otra parte, todos los navegadores muestran por defecto el texto de los párrafos con un tamaño de letra de 16 píxel. Por tanto, en este caso el margen de 1em equivale a un margen de anchura 16px.</p>
+
+    <div class="contenedor__relativo-primario">
+      <h3>Titulo</h3>
+      <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. <strong>Modi</strong> quidem, officiis accusamus beatae debitis vel facere earum laboriosam quos dolor ducimus eaque, consectetur eius voluptatum ea in, illum at iste?</p>
+
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quam id unde labore maxime quod ipsa libero, asperiores obcaecati quaerat quis ex cum voluptate eligendi ad aliquid enim ipsum distinctio magni.</p>
+
+      <div class="contenedor__relativo-secundario">
+        <h4>Subtitulo</h4>
+        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Adipisci veniam minus quo ad itaque <strong>recusandae</strong> debitis id reiciendis, corporis autem. <em>Atque aut adipisci</em> aliquam illo vero, voluptatibus cupiditate enim facilis!</p>
+
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Molestias possimus voluptas nemo. Officia officiis possimus esse iste. Quos sed, voluptate vero consequatur nihil porro veniam temporibus magni laboriosam dolor quis!</p>
+      </div>
+    </div>
+
+    <h3>Porcentajes</h3>
+
+    <p>El porcentaje también es una unidad de medida relativa, aunque por su importancia CSS la trata de forma separada a rem, em y ex. Un porcentaje está formado por un valor numérico seguido del símbolo % y siempre está referenciado a otra medida. Cada una de las propiedades de CSS que permiten indicar como valor un porcentaje, define el valor al que hace referencia ese porcentaje.</p>
+
+    <p>Los porcentajes se utilizan a menudo para establecer la anchura de los elementos o se pueden utilizar por ejemplo para establecer el valor del tamaño de letra respectivamente, Aunque es más habitual definirlos mediante rem o em.</p>
+
+    <div class="contenedor__porcentaje">
+      <div class="contenedor__porcentaje-interior">
+        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nisi, placeat? Illo, a dicta! Consequatur harum praesentium, sint assumenda ducimus, animi, qui voluptatibus architecto porro omnis expedita voluptate voluptatem vitae placeat?</p>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2>Unidades flexibles (viewport)</h2>
+    <p>Existen unas unidades de "nueva generación" que resultan muy útiles, porque dependen del viewport (región visible de la página web en el navegador). Con estas unidades podemos hacer referencia a un porcentaje concreto del tamaño específico que tengamos en la ventana del navegador, independientemente de si es redimensionado o no.</p>
+
+    <p>A continuación se muestran una lista con las Unidades flexibles y la referencia que toma cada una para determinar su valor real:</p>
+    <ul>
+      <li><strong>vw</strong>: viewport width, 1vw = 1% ancho de navegador</li>
+      <li><strong>vh</strong>: viewport height, 1vh = 1% alto de navegador</li>
+      <li><strong>vmin</strong>: viewport minimum dimension, 1vmin = 1% ancho o alto de la dimensión mínima de navegador</li>
+      <li><strong>vmax</strong>: viewport maximum dimension, 1vmax = 1% ancho o alto de la dimensión máxima de navegador</li>
+    </ul>
+
+    <p>La unidad <strong>vw</strong> es un tipo de unidad que hace referencia al ancho del viewport (región visible de la página en el navegador). Por ejemplo, si definimos 50vw, estamos indicando un 50% del ancho actual del navegador. Esto nos permite utilizar tamaños que dependan de las dimensiones de la ventana del navegador.</p>
+
+    <p>Por su parte, la unidad <strong>vh</strong> hace referencia de la misma forma al alto del viewport. Por ejemplo, mientras 50vw hace referencia al 50% del ancho del navegador, si indicamos 50vh estaremos haciendo referencia a la mitad (50%) del alto del navegador.</p>
+
+    <div class="contenedor__flexible"></div>
+
+    <p>Por último, tenemos las unidades <strong>vmin</strong> y <strong>vmax</strong>. La unidad vmin (viewport minimum), simplemente hace referencia al valor más pequeño (mínimo) entre el tamaño de ancho y el tamaño de alto del viewport del navegador. Por otro lado, la unidad vmax (viewport maximum) hace referencia al valor más grande (máximo) entre el tamaño de ancho y el tamaño de alto del viewport del navegador.</p>
+
+    <div class="contenedor__flexible-min"></div>
+    <br>
+    <div class="contenedor__flexible-max"></div>
+
+    <p>Esto puede ser útil en algunas situaciones donde quieres flexibilidad con diseños adaptables, y no necesitas estar haciendo cálculos previos para saber cuál es el más pequeño o más grande antes de utilizarlos.</p>
+
+    <p>Es interesante tener en cuenta que existen una serie de funciones para hacer cálculos con unidades CSS. Son las funciones calc(), min(), max() o clamp(), entre otras.</p>
+  </section>
+</main>
+
+</body>
+</html>

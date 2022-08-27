@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Atributos</title>
+  <link rel="stylesheet" href="https://highlightjs.org/static/demo/styles/monokai-sublime.css">
+  <style>
+    body {
+      margin: 0;
+      padding: 0 20px;
+      border-top: 4px solid #ff6200;
+      background-color: #111;
+      color: #aaa;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif
+    }
+
+    h1, h2 {
+      color: #e0e0e0;
+    }
+
+    ul li strong {
+      color: #f92672;
+    }
+  </style>
+</head>
+<body>
+  <h1>Atributos</h1>
+
+  <h2>Un atributo debería tener:</h2>
+  <ul>
+    <li>Un espacio entre este y el nombre del elemento. (Para un elemento con más de un atributo, los atributos también deben estar separados por espacios).</li>
+    <li>El nombre del atributo, seguido por un signo igual.</li>
+    <li>Un valor del atributo, rodeado de comillas de apertura y cierre.</li>
+  </ul>
+  
+  <pre><code class="language-html">
+    &lt;div nombreDelAtributo=&quot;valor del atributo&quot; ... &lt;/div&gt;
+  </code></pre>
+  
+  <h2>Un enlace pueden tener varios atributos, pero varios son como sigue:</h2>
+  
+  <pre><code class="language-html">
+    &lt;a href=&quot;https://google.com&quot; title=&quot;enlace&quot; target=&quot;_blank&quot;&gt;&lt;/a&gt;
+  </code></pre>
+  
+  <ul>
+    <li><strong>href:</strong> Indica la dirección web a la que se quiere que apunte el enlace, que será hacia donde nos lleve el navegador cuando se haga clic sobre el elemento.</li>
+    <li><strong>title:</strong> Añade información adicional sobre el enlace, como puede ser el título de la página que vinculas. Esta información aparecerá cuando se le pase el ratón por encima.</li>
+    <li><strong>target:</strong> Especifica el contexto de navegación que va a usar para mostrar el enlace. Por ejemplo, target="_blank" abrirá el enlace en una nueva pestaña. Si quieres mostrar el enlace en la pestaña activa, simplemente omite este atributo.</li>
+  </ul>
+  
+  <h2>Atributos booleanos</h2>
+  
+  <p>En ocasiones puedes ver atributos escritos sin valor. Esto está permitido. Estos se denominan atributos booleanos. Los atributos booleanos solo pueden tener un valor, que generalmente es el mismo que el nombre del atributo.</p>
+  
+  <p>Por ejemplo, considera el atributo disabled, que puedes asignar a los elementos de entrada del formulario. (Usa esto para deshabilitar los elementos de entrada del formulario para que el usuario no pueda realizar entradas. Los elementos desactivados suelen tener una apariencia atenuada). Por ejemplo:</p>
+
+  <pre><code class="language-html">
+    &lt;input type=&quot;text&quot; disabled=&quot;disabled&quot;&gt;
+  </code></pre>
+
+  <p>De manera abreviada, también es posible escribirlo como se describe a continuación</p>
+
+  <pre><code class="language-html">
+    &lt;input type=&quot;text&quot; disabled&gt;
+  </code></pre>
+  
+  <h2>Omitir comillas en valores de atributos</h2>
+  
+  <p>Cuando observas diferentes páginas web, puedes encontrarte con todo tipo de estilos de etiquetado extraños, que incluyen valores de atributos sin comillas. Esto se permite en ciertas circunstancias, pero interrumpirá la edición en otras. Por ejemplo, si volvemos a revisar el ejemplo del enlace, sería posible escribir una versión básica con solo el atributo href, así:</p>
+  
+  <pre><code class="language-html">
+    &lt;a href=https://www.academlo.com/&gt;&lt;/a&gt;
+  </code></pre>
+  
+  <p>Sin embargo, las cosas no funcionarán cuando a este estilo se añada el atributo title:</p>
+  
+  <pre><code class="language-html">
+    &lt;a href=https://www.academlo.com/ title=Academlo me encanta&gt;&lt;/a&gt;
+  </code></pre>
+
+  <p>En este punto el navegador interpretará mal el cambio y pensará que el atributo title corresponde a tres atributos: un atributo title con el valor Academlo y dos atributos booleanos: me y encanta. ¡Obviamente, esta no es la intensión! Causará errores o comportamientos inesperados.</p>
+
+  <h2>Incluye siempre las comillas de atributos. Evita tales problemas y da como resultado un código más legible.</h2>
+
+  <a href="./index.html">Regresar</a>
+  <br><br>
+  
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.6.0/highlight.min.js"></script>
+  <script>hljs.highlightAll();</script>
+</body>
+</html>

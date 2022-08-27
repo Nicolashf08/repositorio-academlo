@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Conceptos básicos</title>
+  <link rel="stylesheet" href="https://highlightjs.org/static/demo/styles/monokai-sublime.css">
+  <style>
+    body {
+      margin: 0;
+      padding: 0 20px;
+      border-top: 4px solid #ff6200;
+      background-color: #111;
+      color: #aaa;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif
+    }
+
+    h1,
+    h2 {
+      color: #e0e0e0;
+    }
+
+    ul li strong,
+    p code {
+      color: #f92672;
+    }
+  </style>
+</head>
+
+<body>
+  <h1>Conceptos básicos</h1>
+
+  <h2>Encabezados y párrafos</h2>
+
+  <p>La mayor parte del texto estructurado está compuesto por encabezados y párrafos.</p>
+
+  <p>En HTML, cada párrafo tiene que estar delimitado por un elemento <code>&lt;p&gt;</code>, como en este ejemplo:</p>
+
+  <pre><code class="language-html">
+    &lt;p&gt;Soy un p&aacute;rrafo, &iexcl;desde luego que lo soy!&lt;/p&gt;
+  </code></pre>
+
+  <p>Cada sección tiene que estar delimitada por un elemento de encabezado:</p>
+
+  <pre><code class="language-html">
+    &lt;h1&gt;Yo soy el t&iacute;tulo de la historia&lt;/h1&gt;
+  </code></pre>
+
+  <p>Hay seis elementos de encabezado: <code>&lt;h1&gt;</code>, <code>&lt;h2&gt;</code>, <code>&lt;h3&gt;</code>,
+    <code>&lt;h4&gt;</code>, <code>&lt;h5&gt;</code> y <code>&lt;h6&gt;</code>. Cada elemento representa un nivel de
+    contenido diferente en el documento; <code>&lt;h1&gt;</code> representa el título principal, <code>&lt;h2&gt;</code>
+    representa el subtítulo, <code>&lt;h3&gt;</code> representa el subtítulo del subtítulo, y así sucesivamente.</p>
+
+  <h2>Cómo establecer la estructura jerárquica</h2>
+
+  <p>Por ejemplo, en esta historia, <code>&lt;h1&gt;</code> representa el título de la historia, <code>&lt;h2&gt;</code>
+    representará el título de cada capítulo y <code>&lt;h3&gt;</code> las diferentes secciones del capítulo, y así
+    sucesivamente.</p>
+
+  <pre><code class="language-html">
+    &lt;h1&gt;Mi Historia&lt;/h1&gt;<br />
+    &lt;p&gt;Por jsfdz&lt;/p&gt;<br />
+    <br />
+    &lt;h2&gt;Cap&iacute;tulo 1: La oscura noche&lt;/h2&gt;<br />
+    &lt;p&gt;Era una noche oscura. En alg&uacute;n lugar ...&lt;/p&gt;<br />
+    <br />
+    &lt;h2&gt;Cap&iacute;tulo 2: El silencio eterno&lt;/h2&gt;<br />
+    &lt;p&gt;Nuestro protagonista ni susurrar pudo al ver ...&lt;/p&gt;<br />
+    <br />
+    &lt;h3&gt;El espectro habla&lt;/h3&gt;<br />
+    &lt;p&gt;Hab&iacute;an pasado varias horas m&aacute;s, cuando de repente ...&lt;/p&gt;
+  </code></pre>
+
+  <p>Realmente es a tu elección lo que cada elemento involucrado represente, siempre y cuando la jerarquía tenga
+    sentido. Solo es necesario que tengas en cuenta unas pocas buenas prácticas mientras creas la estructura:</p>
+
+  <ul>
+    <li>Preferentemente debes usar solo un <strong><code>&lt;h1&gt;</code></strong> por página; este es el nivel de título superior, y todos los demás se
+        sitúan por debajo de él en la jerarquía.</li>
+    <li>Asegúrate de que usas los títulos en el orden correcto en la jerarquía. No uses los <strong><code>&lt;h3&gt;</code></strong> para representar
+        subtítulos, seguidos de los <strong><code>&lt;h2&gt;</code></strong> para representar los subtítulos de los subtítulos; eso no tiene sentido y
+          provocará resultados extraños.</li>
+    <li>De los seis niveles de títulos disponibles, debes procurar no usar más de tres por página, a menos que creas que
+      es realmente necesario. Los documentos con muchos niveles (es decir, una jerarquía de títulos muy profunda) son de
+      difícil manejo y navegación. En esos casos se recomienda, si es posible, separar el contenido en varias páginas.
+    </li>
+  </ul>
+
+  <h2>¿Por qué necesitamos semántica?</h2>
+
+  <p>Contamos con la semántica para todo lo que nos rodea. Nos basamos en experiencias previas para conocer la función de cada objeto cotidiano; cuando miramos un objeto, sabemos cuál debe ser su función. Entonces, por ejemplo, esperamos que un semáforo en rojo signifique "alto" y que un semáforo en verde signifique "avance". Las cosas se pueden complicar muy rápidamente si se aplica la semántica incorrecta. (¿Algún país usa rojo para significar "avance"? Esperemos que no).</p>
+
+  <p>De manera similar, debemos asegurarnos de que utilizamos los elementos adecuados y damos a nuestro contenido el significado y función correctos y la apariencia adecuada. En este mismo sentido, el elemento <code>&lt;h1&gt;</code> es un elemento semántico que da al texto al que delimita la función (o significado) de un titular de primer nivel en tu página.</p>
+
+    <pre><code class="language-html">
+      &lt;h1&gt;Este es un titular de primer nivel&lt;/h1&gt;
+    </code></pre>
+
+    <p>De manera predeterminada, el navegador le asignará una fuente de gran tamaño para darle el aspecto de un titular (aunque se le podrá dar el estilo que se quisiera usando CSS). Lo más importante es que su valor semántico se va a usar de diferente manera, por ejemplo, por los motores de búsqueda y los lectores de pantalla (como se mencionó antes).</p>
+
+    <p>Por otra parte, podrías hacer que cualquier elemento parezca un titular de primer rango. Considera lo siguiente:</p>
+
+    <pre><code class="language-html">
+      &lt;span style=&quot;font-size: 32px; margin: 21px 0;&quot;&gt;&iquest;Es este un titular de primer rango?&lt;/span&gt;
+    </code></pre>
+
+    <p>Hemos aplicado CSS a este elemento para que parezca un titular de primer nivel, pero al no tener valor semántico, no tiene ninguna de las ventajas añadidas que hemos descrito antes. Es una buena idea usar el elemento HTML apropiado para cada tarea.</p>
+
+    <hr>
+
+    <h2>Énfasis e importancia</h2>
+
+    <p>En el lenguaje humano, a menudo enfatizamos ciertas palabras para alterar el significado de una frase, y a menudo queremos destacar ciertas palabras como importantes o diferentes en algún sentido. HTML nos dota de diversos elementos semánticos que nos permiten destacar contenido textual con tales efectos, y en esta sección veremos los más comunes</p>
+
+    <h2>Énfasis</h2>
+
+    <p>Cuando queremos dar énfasis al lenguaje hablado, acentuamos ciertas palabras y así alteramos sutilmente el significado de lo que decimos. De manera similar, en el lenguaje escrito ponemos palabras en cursiva para destacarlas. Por ejemplo, las dos siguientes frases tienen diferente significado:</p>
+
+    <blockquote>Me alegro de que no llegues tarde.</blockquote>
+
+    <blockquote>Me <em>alegro</em> de que no llegues <em>tarde</em>.</blockquote>
+
+    <p>La primera frase suena aliviada porque la persona no llega tarde. Por el contrario, la segunda suena sarcástica y un tanto pasivo-agresiva, expresa molestia porque la persona ha llegado algo tarde.</p>
+
+    <p>En HTML usamos el elemento <code>&lt;em&gt;</code> («emphasis») para marcar estos casos. El documento logra entonces transmitir una lectura más interesante y además así lo reconocen los lectores de pantalla, que lo expresan con un diferente tono de voz. El navegador, de manera predeterminada, aplica el estilo de letra itálica, pero no debes utilizar esta etiqueta solamente para establecer el estilo de letra itálica. Para usar ese estilo, debes utilizar únicamente la etiqueta del elemento <code>&lt;span&gt;</code> y algo de CSS u otra etiqueta con el elemento <code>&lt;i&gt;</code>.</p>
+
+    <h2>Importancia fuerte</h2>
+
+    <p>Para enfatizar palabras importantes al hablar solemos acentuarlas, y al escribir lo hacemos en estilo negrita. Por ejemplo:</p>
+
+    <blockquote>Este líquido es <strong>altamente tóxico</strong>.</blockquote>
+
+    <blockquote>Cuento contigo. <strong>¡No llegues tarde!</strong>.</blockquote>
+
+    <p>En HTML usamos el elemento <code>&lt;strong&gt;</code> (importancia fuerte) para marcar tales expresiones. El documento resulta entonces más útil, y de nuevo los lectores de pantalla reconocen estos elementos y el tono de voz cambia a uno más fuerte. El estilo negrita es el que aplican los navegadores por omisión, pero no debes usar esta etiqueta solamente para aplicar este estilo. Para hacer eso usa el elemento <code>&lt;span&gt;</code> y CSS, o un elemento <code>&lt;b&gt;</code>.</p>
+
+    <h2>Cursiva, negrita, subrayado...</h2>
+
+    <p>Los elementos que hemos comentado hasta ahora tienen asociada una semántica clara. La situación con <code>&lt;b&gt;</code> (negrita o «bold»), <code>&lt;i&gt;</code> (cursiva o «italic») y <code>&lt;u&gt;</code> (subrayado o «underline») es algo más complicada. Surgieron para que las personas pudieran escribir textos en negrita, cursiva o subrayado en un tiempo en el que pocos navegadores o ninguno admitían el CSS. Elementos como estos, que solo afectan a la presentación y no a la semántica, se conocen como elementos de presentación y no se deberían usar porque, como hemos visto, la semántica es muy importante para la accesibilidad y el SEO, entre otros aspectos.</p>
+
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.6.0/highlight.min.js"></script>
+  <script>hljs.highlightAll();</script>
+</body>
+
+</html>

@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://highlightjs.org/static/demo/styles/monokai-sublime.css">
+  <title>Modelo de Caja</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <header>
+    <h1>Modelo de Caja</h1>
+  </header>
+
+  <main>
+    <section>
+      <h2>Cajas en Bloque y Cajas en Línea</h2>
+      <p>Si una caja se define como un bloque, se comportará de las maneras siguientes:</p>
+
+      <ul>
+        <li>La caja fuerza un salto de línea al llegar al final de la línea.</li>
+        <li>La caja se extenderá en la dirección de la línea para llenar todo el espacio disponible que haya en su contenedor. En la mayoría de los casos, esto significa que la caja será tan ancha como su contenedor, y llenará el 100% del espacio disponible.</li>
+        <li>Se respetan las propiedades width y height.</li>
+        <li>El relleno, el margen y el borde mantienen a los otros elementos alejados de la caja.</li>
+      </ul>
+
+      <div class="contenedor__bloque">
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+      </div>
+
+      <h3>Código:</h3>
+      <pre class="line-numbers">
+        <code class="language-html">
+          &lt;div class="contenedor__bloque"&gt;
+            &lt;div&gt;&lt;/div&gt;
+            &lt;div&gt;&lt;/div&gt;
+            &lt;div&gt;&lt;/div&gt;
+            &lt;div&gt;&lt;/div&gt;
+            &lt;div&gt;&lt;/div&gt;
+          &lt;/div&gt;
+        </code>
+      </pre>
+
+      <p>Si una caja tiene una visualización externa de tipo inline, entonces:</p>
+
+      <ul>
+        <li>La caja no fuerza ningún salto de línea al llegar al final de la línea.</li>
+        <li>Las propiedades width y height no se aplican.</li>
+        <li>Se aplican relleno, margen y bordes verticales, pero no mantienen alejadas otras cajas en línea.</li>
+        <li>Se aplican relleno, margen y bordes horizontales, y mantienen alejadas otras cajas en línea.</li>
+      </ul>
+
+      <div class="contenedor__linea">
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+
+      <h3>Código:</h3>
+      <pre class="line-numbers">
+        <code class="language-html">
+          &lt;div class="contenedor__linea"&gt;
+            &lt;span&gt;&lt;/span&gt;
+            &lt;span&gt;&lt;/span&gt;
+            &lt;span&gt;&lt;/span&gt;
+            &lt;span&gt;&lt;/span&gt;
+            &lt;span&gt;&lt;/span&gt;
+          &lt;/div&gt;
+        </code>
+      </pre>
+    </section>
+
+    <section>
+      <h2>Modelo de Caja</h2>
+      <p>El modelo de cajas CSS completo se aplica a cajas que presentan comportamiento en bloque; las cajas con comportamiento en línea solo usan una parte del comportamiento definido en el modelo de cajas.</p>
+
+      <p>Modelo de Caja: Es la forma en que CSS ve a los elementos HTML y ¿cómo los ve? como si fueran cajas con las siguientes propiedades:</p>
+
+      <figure class="contenedor__imagen">
+        <img src="modelo-de-cajas.png" alt="modelo de cajas">
+      </figure>
+
+      <ol>
+        <li><strong>El contenido (content)</strong>: El contenido (texto) del elemento HTML, tomando en cuanta sus dimensiones (width & height).</li>
+        <li><strong>El borde (border)</strong>: Lo que delimita cada uno de los elementos HTML.</li>
+        <li><strong>El relleno (padding)</strong>: Son las distancias internas (La distancia del borde al contenido).</li>
+        <li><strong>El márgen (margin)</strong>: Son las distancias externas (La distancia entre el elemento html y sus elementos hermanos o padres).</li>
+      </ol>
+
+      <p>Dentro del modelo de caja hay que considerar que una caja tendrá 4 lados:</p>
+
+      <figure class="contenedor__imagen">
+        <img src="esquema2.gif" alt="modelo de cajas lados">
+      </figure>
+
+      <ol>
+        <li>Arriba (top)</li>
+        <li>Derecha (right)</li>
+        <li>Abajo (bottom)</li>
+        <li>Izquierda (left)</li>
+      </ol>
+    </section>
+
+    <section>
+      <h2>Modelo de caja estandar</h2>
+      <h3>Tamaño de caja (box-sizing: content-box)</h3>
+
+      <div class="contenedor__estandar">
+        <span></span>
+      </div>
+
+      <p><strong>200</strong>x<strong>200px</strong></p>
+
+      <p><strong>W</strong>: <small>(PR + PL = 40) + (BR + BL = 10) = 50w</small></p>
+      <p><strong>H</strong>: <small>(PT + PB = 40) + (BT + BB = 10) = 50h</small></p>
+
+      <p>(200 + 50 = 250w) (200 + 50 = 250h)</p>
+      <p><strong>250</strong>x<strong>250px</strong></p>
+    </section>
+
+    <section>
+      <h2>Modelo de caja Alternativo</h2>
+      <h3>Tamaño de caja (box-sizing: border-box)</h3>
+
+      <p>Por defecto, los navegadores usan el modelo de cajas estándar. Si deseas activar el modelo de cajas alternativo para un elemento, hazlo configurando box-sizing: border-box. Con ello, le dices al navegador que tome como el borde de la caja el área definida por cualquier tamaño que establezcas.</p>
+
+      <div class="contenedor__alternativo">
+        <span></span>
+      </div>
+
+      <p><strong>200</strong>x<strong>200px</strong></p>
+
+      <p><strong>W</strong>: <small>(PR + PL = 40) + (BR + BL = 10) = 50w</small></p>
+      <p><strong>H</strong>: <small>(PT + PB = 40) + (BT + BB = 10) = 50h</small></p>
+
+      <p>(150 + 50 = 200w) (150 + 50 = 200h)</p>
+      <p><strong>200</strong>x<strong>200px</strong></p>
+
+      <p>Si quieres que todos tus elementos usen el modelo de cajas alternativo (opción común entre los desarrolladores) debes establecer la propiedad box-sizing en el elemento html.</p>
+
+      <pre><code class="language-css">
+        html {<br />
+        &nbsp;&nbsp;box-sizing: border-box;<br />
+        }<br />
+        <br />
+        *, *::before, *::after {<br />
+        &nbsp;&nbsp;box-sizing: inherit;<br />
+        }
+      </code></pre>
+
+
+    </section>
+
+    <section>
+      <h2>El modelo de cajas y las cajas en línea</h2>
+      <p>Tenemos las propiedades width, height, margin, border, y padding Puedes ver que la anchura y la altura se ignoran. Se respetan el margen, el relleno y el borde, pero no cambian la relación de otro contenido con respecto a nuestra caja en línea, por lo que el relleno y el borde se superponen.</p>
+
+      <p>Hay un valor especial de display que proporciona un punto medio entre inline y block.</p>
+
+      <p>El uso de display: <strong>inline-block</strong></p>
+
+      <div class="contenedor__bloque-linea">
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+
+      <ul>
+        <li>Se respetan las propiedades de ancho y alto.</li>
+        <li>El relleno, el margen y el borde mantienen los otros elementos alejados de la caja.</li>
+      </ul>
+      <p>Sin embargo, no se fuerza un salto de línea, y solo se hace más grande que su contenido si añades las propiedades width y height explícitamente.</p>
+
+      <h3>Código:</h3>
+      <pre><code class="language-html">
+      &lt;div class=&quot;contenedor__bloque-linea&quot;&gt;<br />
+        &lt;span&gt;&lt;/span&gt;<br />
+        &lt;span&gt;&lt;/span&gt;<br />
+        &lt;span&gt;&lt;/span&gt;<br />
+        &lt;span&gt;&lt;/span&gt;<br />
+        &lt;span&gt;&lt;/span&gt;<br />
+      &lt;/div&gt;       
+      </code></pre>
+
+    </section>
+  </main>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.6.0/highlight.min.js"></script>
+  <script>hljs.highlightAll();</script>
+</body>
+
+</html>

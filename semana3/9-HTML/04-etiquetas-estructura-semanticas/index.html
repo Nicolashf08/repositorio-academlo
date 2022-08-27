@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Etiquetas de estructura y semántica</title>
+  <link rel="stylesheet" href="https://highlightjs.org/static/demo/styles/monokai-sublime.css">
+  <style>
+    body {
+      margin: 0;
+      padding: 0 20px;
+      border-top: 4px solid #ff6200;
+      background-color: #111;
+      color: #aaa;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif
+    }
+
+    h1,
+    h2 {
+      color: #e0e0e0;
+    }
+
+    ul li strong, p code {
+          color: #f92672;
+        }
+  </style>
+</head>
+<body>
+  <h1>Etiquetas de estructura y semántica</h1>
+
+  <p>En tu código HTML puedes crear secciones de contenido basadas en su funcionalidad, puedes usar elementos que representen sin ambigüedad las diferentes secciones de contenido descritas, de forma que las tecnologías de accesibilidad y los lectores de pantalla puedan reconocer esos elementos y asistir en tareas como «encontrar el menú de navegación», o «encontrar el contenido principal».</p>
+
+  <p>HTML dispone de etiquetas adecuadas que puedes usar para establecer estas secciones semánticas, por ejemplo:</p>
+
+  <ul>
+    <li>encabezado: <strong><code>&lt;header&gt;</code></strong></li>
+    <li>menú de navegación: <strong><code>&lt;nav&gt;</code></strong></li>
+    <li>contenido principal: <strong><code>&lt;main&gt;</code></strong>, con varias subsecciones (además de la barra lateral) representadas por los elementos <strong><code>&lt;article&gt;</code></strong>, <strong><code>&lt;section&gt;</code></strong>, y <strong><code>&lt;div&gt;</code></strong>.</li>
+    <li>barra lateral: <strong><code>&lt;aside&gt;</code></strong> a menudo colocada dentro de <strong><code>&lt;main&gt;</code></strong></li>
+    <li>pie de página: <strong><code>&lt;footer&gt;</code></strong></li>
+  </ul>
+
+  <p>Es bueno entender el significado global de todos los elementos definitorios de las secciones HTML en detalle; es algo en que trabajarás gradualmente a medida que comiences a tener más experiencia en el desarrollo web. Por el momento, estas son las definiciones principales que deberíamos tratar de entender:</p>
+
+  <ul>
+    <li><strong><code>&lt;main&gt;</code></strong> Encierra el contenido particular a esta página. Utilizaremos <main> solamente una vez para cada página y lo situaremos directamente dentro del elemento <strong><code>&lt;body&gt;</code></strong>. Es mejor que no lo anidemos en otros elementos.</li>
+      <li><strong><code>&lt;article&gt;</code></strong> Encuadra un bloque de contenido que tiene sentido por sí mismo aparte del resto de la página (por ejemplo una entrada en un blog).</li>
+      <li><strong><code>&lt;section&gt;</code></strong> Es parecido al elemento <strong><code>&lt;article&gt;</code></strong>, pero se usa más para agrupar cada parte de la página que, por su funcionalidad, constituye una sección en sí misma (por ejemplo un minimapa o un conjunto de titulares y resúmenes). Se considera una buena práctica comenzar cada una de estas secciones con un título de encabezado (heading); observa que podemos subdividir artículos (<strong><code>&lt;article&gt;</code></strong>) en distintas secciones (<strong><code>&lt;section&gt;</code></strong>), o también secciones en distintos artículos, dependiendo del contexto.</li>
+      <li><strong><code>&lt;aside&gt;</code></strong> Incluye contenido que no está directamente relacionado con el contenido principal, pero que puede aportar información adicional relacionada indirectamente con él (resúmenes, biografías del autor, enlaces relacionados, etc.).</li>
+      <li><strong><code>&lt;header&gt;</code></strong> Representa un grupo de contenido introductorio. Si este es «hijo» de un elemento <strong><code>&lt;body&gt;</code></strong>, se convertirá en el encabezado principal del sitio web, pero si es hijo de un elemento <strong><code>&lt;article&gt;</code></strong> o un elemento <strong><code>&lt;section&gt;</code></strong>, entonces simplemente será el encabezado particular de cada sección (por favor, no lo confundas con títulos y encabezados).</li>
+      <li><strong><code>&lt;nav&gt;</code></strong> Contiene la funcionalidad de navegación principal de la página. Los enlaces secundarios, etc., no entrarán en la navegación.</li>
+        <li><strong><code>&lt;footer&gt;</code></strong> Representa un grupo de contenido al final de una página.</li>
+  </ul>
+  
+  <h2>Envolturas no semánticas</h2>
+
+  <p>A veces hay situaciones en las que no encuentras un elemento semántico adecuado para agrupar ciertos elementos o englobar cierto contenido. Para casos como esos, HTML dispone del elemento <code>&lt;div&gt;</code> y del elemento <code>&lt;span&gt;</code>. Preferentemente estos elementos se deberán utilizar con sus atributos (class), para conferirles algún tipo de etiquetado que permita determinarlos con facilidad.</p>
+
+  <ul>
+    <li><strong><code>&lt;span&gt;</code></strong> es un elemento no-semántico que se utiliza en el interior de una línea. Se utiliza cuando no se nos ocurre el uso de ningún otro elemento semántico de texto en el que incluir el contenido, o si no se desea añadir ningún significado específico.</li>
+  </ul>
+
+  <pre><code class="language-html">
+    &lt;p&gt;<br />
+    &nbsp;&nbsp;&lt;span class="class-name"&gt;&lt;/span&gt;<br />
+    &lt;/p&gt;<br />
+  </code></pre>
+
+
+  <ul>
+    <li><strong><code>&lt;div&gt;</code></strong> es un elemento de bloque no-semántico; lo utilizaras cuando no se te ocurra el uso de otro elemento semántico mejor, o si no deseas añadir ningún significado concreto.</li>
+  </ul>
+
+  <pre><code class="language-html">
+    &lt;div class="class-name"&gt;&lt;/div&gt;<br />
+  </code></pre>
+
+  <h2>Saltos de línea y líneas horizontales</h2>
+
+  <p>Dos elementos que debes conocer y utilizarás ocasionalmente son <code>&lt;br&gt;</code> y <code>&lt;hr&gt;</code>:</p>
+
+  <ul>
+    <li>El elemento <strong><code>&lt;br&gt;</code></strong> genera un salto de línea en un párrafo; es la única manera de representar series de líneas cortas, como una dirección postal o un poema.</li>
+    <li>Los elementos <strong><code>&lt;hr&gt;</code></strong> generan una regla horizontal en el documento que denota un cambio en la temática del texto (como un cambio de tema o de escena). Visualmente tiene el aspecto de una línea horizontal.</li>
+  </ul>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.6.0/highlight.min.js"></script>
+  <script>hljs.highlightAll();</script>
+</body>
+</html>

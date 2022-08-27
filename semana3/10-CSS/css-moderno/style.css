@@ -1,0 +1,44 @@
+/* Prefijos */
+/* Desde 2011, la especificación CSS comienza a evolucionar separando sus nuevas funcionalidades en pequeños módulos, favoreciendo su implementación en navegadores. */
+
+/* Algunas de las propiedades que veremos no están definidas por completo, sólo son borradores o pueden variar en la especificación definitiva, por lo que los navegadores las implementan utilizando una serie de vendor prefixes (prefijos por navegador), que facilitan la segmentación de funcionalidades. */
+
+/* De esta forma, podemos utilizar varios prefijos para asegurarnos que aunque dichas funcionalidades tengan un comportamiento o sintaxis diferente en cada navegador, podemos hacer referencia a cada una de ellas por separado: */
+
+/* 
+transform: ...  Oficial de CSS3
+-webkit-transform: ... old Chrome / Safari (webkit)
+-moz-transform: ... old Firefox (gecko)
+-ms-transform: ... Internet Explorer (trident)
+-o-transform: ... old Opera (Presto)
+*/
+
+/* Verificar el estado actual de una propiedad: https://www.caniuse.com/ */
+
+/* Actualmente, los vendor prefixes están en proceso de desaparecer. Las principales compañías de navegadores han optado por favorecer el uso de flags en el navegador del usuario para activar o desactivar opciones experimentales o crear especificaciones más pequeñas y breves que puedan ser estables mucho más rápido. Por esta razón, se aconseja utilizar vendor prefixes solo cuando necesitas soporte específico en navegadores muy antiguos. */
+
+/* CSS Custom Properties */
+
+/* Las CSS Custom Properties (muchas veces conocidas por variables CSS) son un mecanismo de CSS que permite dar un valor personalizado a las propiedades. El objetivo principal suele ser evitar escribir múltiples veces ese valor, y en su lugar, ponerle un nombre más lógico y fácil de recordar, que hará referencia al valor real. */
+
+/* Las custom properties se suelen agrupar en las primeras líneas de un bloque CSS */
+
+/* Para definir una custom property haremos uso de los dos guiones -- previos al nombre que queramos utilizar. Además, debemos fijarnos en el elemento que definimos la variable, en este ejemplo la pseudoclase :root: */
+
+/* 
+La pseudoclase :root hace referencia al elemento raíz del documento, o lo que es lo mismo, al elemento <html>. La diferencia de utilizar html o :root como selector es que este último tiene algo más de especificidad CSS. Mientras que html tiene 001, :root tendría 010.
+*/
+
+/* Al colocarla en :root estamos definiendo que la custom property estará definida para el ámbito de esa etiqueta <html> (o cualquier elemento hijo), es decir, a todo el documento. Sin embargo, ya veremos que podemos aplicar estas variables sólo a partes concretas del DOM de nuestra página. */
+
+/* A la hora de utilizar una custom property, hay que utilizarla dentro de la expresión var() */
+
+/* Además, es muy recomendable que la expresión var() tenga dos parámetros. El primero de ellos, la custom property en cuestión, el segundo de ellos, el valor por defecto en el caso de que esa propiedad no esté definida en el ámbito actual:
+
+.elemento {
+    background: var(--background-color, blue);
+}
+*/
+
+/* Ámbito de las custom properties */
+/* Esto nos permite mucha flexibilidad y potencia a la hora de utilizar custom properties en CSS, ya que son tremendamente útiles y versátiles, permitiéndonos utilizar incluso la cascada de CSS a nuestro favor. */

@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Reglas CSS</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://highlightjs.org/static/demo/styles/monokai-sublime.css">
+</head>
+
+<body>
+  <header>
+    <h1>Reglas CSS</h1>
+  </header>
+
+  <main>
+    <section>
+      <h2>¿Qué es la sintaxis CSS?</h2>
+      <p>Se considera sintaxis al orden y relación de los elementos que componen una correcta instrucción.</p>
+    </section>
+
+    <section>
+      <h2>¿Qué es una regla CSS?</h2>
+      <p>Una regla CSS es la forma adecuada de escribir una instrucción mediante código CSS, es decir la manera en que
+        se debe escribir código CSS para que este sea interpretado y aplicado correctamente por el navegador web.</p>
+
+      <h3>Partes de una regla CSS</h3>
+      <pre><code class="language-css">
+        selector { <br />
+        &nbsp;&nbsp;propiedad: valor; (declaraci&oacute;n)<br />
+        } 
+      </code></pre>
+      <p>Una regla CSS está formada principalmente por un selector y una declaración, la declaración siempre va dentro
+        de llaves y dentro se encuentran las propiedades con su respectivo valor.</p>
+
+      <ul>
+        <li><strong>El selector</strong>: es quien indica a que elemento HTML se aplica el código CSS (el estilo).</li>
+        <li><strong>La propiedad</strong>: es la característica que se desea definir, por ejemplo: color (el color).
+        </li>
+        <li><strong>Valor</strong>: es el valor que tomará la propiedad, por ejemplo: green (verde).</li>
+        <li><strong>Punto y coma (;)</strong>: una declaración siempre se debe terminar con un punto y coma (;)</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Tipos de Selectores</h2>
+
+      <h3>Selector Universal</h3>
+      <p>El selector universal es el selector más general, es decir, se aplica a todos los elementos HTML.</p>
+
+      <pre><code class="language-css">
+        * { <br />
+        &nbsp;&nbsp;propiedad: valor;<br />
+        &nbsp;&nbsp;...
+        } 
+      </code></pre>
+
+      <h3>Selector de tipo</h3>
+      <p>Los selectores de tipo en CSS se refieren a los selectores que apuntan a un tipo de elemento HTML como puede
+        ser:</p>
+
+      <pre><code class="language-css">
+        h1 { <br />
+        &nbsp;&nbsp;propiedad: valor;<br />
+        &nbsp;&nbsp;...
+        }
+      </code></pre>
+
+      <h3>Selector de clase</h3>
+
+      <p>Este tipo de selectores en CSS apuntan a un elemento HTML identificado, es decir a un elemento HTML que tenga
+        el atributo class.</p>
+
+      <pre><code class="language-css">
+        .nombreDeLaClase { <br />
+        &nbsp;&nbsp;propiedad: valor;<br />
+        &nbsp;&nbsp;...
+        }
+      </code></pre>
+
+      <blockquote class="cita">
+        <p>El selector de clase es una forma de identificar un elemento HTML, es decir, un elemento HTML que tenga una
+          clase.</p>
+        <cite class="subrayado">- Autor A.</cite>
+      </blockquote>
+
+      <h3>Selector con identidicador (id)</h3>
+
+      <p>Tanto el selector de tipo id y class funcionan de la misma manera; la única diferencia es que para los
+        selectores de tipo id se le antepone el signo de numeral (#) y a los de tipo class un punto (.)</p>
+
+      <pre><code class="language-css">
+        #identificadorUnico { <br />
+        &nbsp;&nbsp;propiedad: valor;<br />
+        &nbsp;&nbsp;...
+        }
+      </code></pre>
+
+      <p id="parrafo1">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Asperiores tenetur vel totam adipisci
+        ullam voluptatem cupiditate accusamus illo consequuntur quibusdam, quam maiores, nostrum necessitatibus! Dolorem
+        quidem veritatis dolor eveniet eius.</p>
+
+      <h3>Selector de atributo</h3>
+      <p>El selector de atributos CSS coincide con los elementos en función de la presencia o el valor de un atributo
+        determinado.</p>
+
+      <h3>Ejemplo: </h3>
+      <pre><code class="language-css">
+        /* Elementos &lt;a&gt; con un atributo title */<br />
+        a[title] {<br />
+        &nbsp;&nbsp;propiedad: valor;<br />
+        &nbsp;&nbsp;...
+        }<br />
+        <br />
+        /* Elementos &lt;a&gt; con un href que coincida con &quot;https://example.org&quot; */<br />
+        a[href=&quot;https://example.org&quot;] {<br />
+        &nbsp;&nbsp;propiedad: valor;<br />
+        &nbsp;&nbsp;...
+        }<br />
+        <br />
+        /* Elementos &lt;a&gt; con un href que contenga &quot;example&quot; */<br />
+        a[href*=&quot;example&quot;] {<br />
+        &nbsp;&nbsp;propiedad: valor;<br />
+        &nbsp;&nbsp;...
+        }<br />
+        <br />
+        /* Elementos &lt;a&gt; con un href que comience con &quot;#&quot; */<br />
+        a[href^=&quot;#&quot;] {<br />
+        &nbsp;&nbsp;propiedad: valor;<br />
+        &nbsp;&nbsp;...
+        }<br />
+        <br />
+        /* Elementos &lt;a&gt; con un href que termine en &quot;.org&quot; */<br />
+        a[href$=&quot;.org&quot;] {<br />
+        &nbsp;&nbsp;propiedad: valor;<br />
+        &nbsp;&nbsp;...
+        }<br />
+        <br />
+        /* Elementos &lt;a&gt; cuyo atributo class contenga la palabra &quot;logo&quot; */<br />
+        a[class~=&quot;logo&quot;] {<br />
+        &nbsp;&nbsp;propiedad: valor;<br />
+        &nbsp;&nbsp;...
+        }
+      </code></pre>
+
+      <ul>
+        <li><a href="#interno">Enlace interno</a></li>
+        <li><a href="https://google.com" target="_blank">Enlace externo</a></li>
+        <li><a href="#InSensitive">Enlace interno insensible Insensitive</a></li>
+        <li><a href="https://example.org">Ejemplo de enlace .org</a></li>
+      </ul>
+
+    </section>
+
+    <section>
+      <h2>Operadores de combinación de selectores</h2>
+
+      <h3>Hijos directos</h3>
+      <p>El combinador > separa a dos selectores y busca solo a los elementos que coindicen con el segundo selector y que son hijos directos del primero.</p>
+
+      <pre><code class="language-css">
+        .contenedor__principal > p { <br />
+        &nbsp;&nbsp;propiedad: valor;<br />
+        &nbsp;&nbsp;...
+        }
+      </code></pre>
+
+      <h3>Decendientes</h3>
+      <p>El ␣ combinador (que se supone que representan un espacio, o mejor dicho uno o más espacios en blanco) combina dos selectores tales que el selector combinado incluye sólo los elementos que coinciden con el segundo selector para los que hay un elemento ancestro que coincide con el primer selector.</p>
+
+      <pre><code class="language-css">
+        .contenedor__principal p { <br />
+        &nbsp;&nbsp;propiedad: valor;<br />
+        &nbsp;&nbsp;...
+        }
+      </code></pre>
+
+      <div class="contenedor__principal">
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta, doloribus culpa excepturi quos quaerat quo beatae fugiat facilis magni quasi dolor ipsum deserunt maxime eveniet soluta odio eum dolore illo?</p>
+        <div class="contenedor__secundario">
+          <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quidem, incidunt minima. Debitis omnis nemo perferendis. Iusto fuga quibusdam corporis laudantium, harum quisquam nihil magni id mollitia porro ipsam facilis cumque?</p>
+        </div>
+      </div>
+
+      <h3>Hermanos adyacentes</h3>
+      <p>Se hace referencia a este selector como selector adyacente o selector del próximo hermano. Sólo seleccionará un elemento especificado que esté inmediatamente después de otro elemento especificado.</p>
+
+      <pre><code class="language-css">
+        .lista li + li { <br />
+        &nbsp;&nbsp;propiedad: valor;<br />
+        &nbsp;&nbsp;...
+        }
+      </code></pre>
+
+      <ul class="lista">
+        <li>Elemento 1</li>
+        <li>Elemento 2</li>
+        <li>Elemento 3</li>
+        <li>Elemento 4</li>
+        <li>Elemento 5</li>
+      </ul>
+
+      <h3>Hermanos general</h3>
+      <p>El combinador ~ separa dos selectores y selecciona el segundo elemento sólo si está precedido por el primero y ambos comparten un padre común.</p>
+
+      <pre><code class="language-css">
+        .parrafo2 span ~ span { <br />
+        &nbsp;&nbsp;propiedad: valor;<br />
+        &nbsp;&nbsp;...
+        }
+      </code></pre>
+
+      <p class="parrafo2">
+        Lorem ipsum dolor sit amet <span>consectetur adipisicing</span> elit. Cum, ex deleniti? <span>Quisquam</span>, rerum, animi pariatur explicabo ad nisi mollitia vel sunt, officiis suscipit voluptas veniam earum <em>nemo</em> perferendis! <span>Sapiente</span>, numquam!
+      </p>
+    </section>
+
+    <section>
+      <h2>Pseudo Clases</h2>
+      <p>Es una palabra clave que se añade a los selectores y que especifica un estado especial del elemento seleccionado.</p>
+
+      <pre><code class="language-css">
+        h2:hover { <br />
+        &nbsp;&nbsp;propiedad: valor;<br />
+        &nbsp;&nbsp;...
+        }
+      </code></pre>
+
+      <table border class="tabla">
+        <tr>
+          <th>nombre</th>
+          <th>edad</th>
+        </tr>
+        <tr>
+          <td>Juan</td>
+          <td>20</td>
+        </tr>
+        <tr>
+          <td>Pedro</td>
+          <td>30</td>
+        </tr>
+        <tr>
+          <td>Maria</td>
+          <td>40</td>
+        </tr>
+        <tr>
+          <td>Carlos</td>
+          <td>20</td>
+        </tr>
+        <tr>
+          <td>Eduardo</td>
+          <td>30</td>
+        </tr>
+        <tr>
+          <td>Santiago</td>
+          <td>40</td>
+        </tr>
+      </table>
+
+      <div class="contenedor__tipos">
+        <h4>h4</h4>
+        <span>span</span>
+        <p>p</p>
+        <a>a</a>
+        <h4>h4</h4>
+        <p>p</p>
+        <span>span</span>
+        <h4>h4</h4>
+        <em>em</em>
+      </div>
+
+    </section>
+
+    <section>
+      <h2>Pseudo Elementos</h2>
+      <p>Al igual que las pseudo classes, los pseudo elementos se añaden a los selectores, pero en cambio, no describen un estado especial sino que, permiten añadir estilos a una parte concreta del documento.</p>
+
+      <pre><code class="language-css">
+        a[target="_blank"]::before { <br />
+        &nbsp;&nbsp;propiedad: valor;<br />
+        &nbsp;&nbsp;...
+        }
+      </code></pre>
+
+      <p class="cuento">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eius fugit in, cupiditate soluta labore error vitae consequuntur cumque perferendis quia, explicabo molestiae aliquam ut ratione minima voluptatum dolore quasi illo!</p>
+
+      <p class="parrafo3">Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse unde dolor rerum incidunt maiores eum impedit culpa tenetur, eaque sint, itaque delectus suscipit excepturi quia quisquam officiis reiciendis magni deleniti.</p>
+    </section>
+  </main>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.6.0/highlight.min.js"></script>
+  <script>hljs.highlightAll();</script>
+</body>
+
+</html>

@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Elementos de bloque y elementos en línea</title>
+  <link rel="stylesheet" href="https://highlightjs.org/static/demo/styles/monokai-sublime.css">
+  <style>
+    body {
+      margin: 0;
+      padding: 0 20px;
+      border-top: 4px solid #ff6200;
+      background-color: #111;
+      color: #aaa;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif
+    }
+
+    h1,
+    h2 {
+      color: #e0e0e0;
+    }
+
+    .ejemplo>* {
+      border: 1px solid #f92672;
+    }
+  </style>
+</head>
+
+<body>
+
+  <h1>Elementos de bloque y elementos en línea</h1>
+
+  <p>Hay dos categorías importantes de elementos en HTML. Estos son los elementos de bloque y los elementos en línea.
+  </p>
+
+  <h2>Elementos de bloque</h2>
+
+  <p>Los elementos de bloque forman un bloque visible en la página. Aparecerán en una línea nueva después de cualquier
+    contenido anterior. Cualquier contenido que vaya después también aparecerá en una línea nueva. Los elementos a nivel
+    de bloque suelen ser elementos estructurales de la página. Por ejemplo, un elemento a nivel de bloque puede
+    representar encabezados, párrafos, listas, menús de navegación o pies de página. Un elemento a nivel de bloque no
+    estaría anidado dentro de un elemento en línea, pero podría estar anidado dentro de otro elemento a nivel de bloque.
+  </p>
+
+  <p>Un elemento en bloque ocupa todo el espacio de su elemento padre (contenedor), creando así un "bloque".</p>
+
+  <div class="ejemplo">
+    <div>div</div>
+    <div>div</div>
+    <div>div</div>
+    <p>p</p>
+    <p>p</p>
+    <p>p</p>
+  </div>
+
+  <h3>Código:</h3>
+  <pre><code class="language-html">
+      &lt;div&gt;div&lt;/div&gt;<br />
+      &lt;div&gt;div&lt;/div&gt;<br />
+      &lt;div&gt;div&lt;/div&gt;<br />
+      &lt;p&gt;p&lt;/p&gt;<br />
+      &lt;p&gt;p&lt;/p&gt;<br />
+      &lt;p&gt;p&lt;/p&gt;<br />
+    </code></pre>
+
+
+  <h2>Elementos en Línea</h2>
+
+  <p>Los elementos en línea están contenidos dentro de elementos de bloque y delimitan solo pequeñas partes del
+    contenido del documento; (no párrafos enteros o agrupaciones de contenido) Un elemento en línea no hará que aparezca
+    una nueva línea en el documento. Suele utilizarse con texto. Por ejemplo es el caso de un elemento &lt;span> o
+    &lt;a> (hipervínculo) o elementos de énfasis como &lt;em> o &lt;strong>.</p>
+
+  <p>Un elemento en línea ocupa sólo el espacio delimitado por las etiquetas que definen el elemento en línea.</p>
+
+  <div class="ejemplo">
+    <span>span</span>
+    <span>span</span>
+    <span>span</span>
+    <a href="#">link</a>
+    <a href="#">link</a>
+    <a href="#">link</a>
+    <em>em</em>
+    <em>em</em>
+    <em>em</em>
+  </div>
+
+  <h3>Código:</h3>
+  <pre><code class="language-html">
+    &lt;span&gt;span&lt;/span&gt;<br />
+    &lt;span&gt;span&lt;/span&gt;<br />
+    &lt;span&gt;span&lt;/span&gt;<br />
+    &lt;a href=&quot;#&quot;&gt;link&lt;/a&gt;<br />
+    &lt;a href=&quot;#&quot;&gt;link&lt;/a&gt;<br />
+    &lt;a href=&quot;#&quot;&gt;link&lt;/a&gt;<br />
+    &lt;em&gt;em&lt;/em&gt;<br />
+    &lt;em&gt;em&lt;/em&gt;<br />
+    &lt;em&gt;em&lt;/em&gt;<br />
+    </code></pre>
+
+  <p>Los términos «en bloque» (block) y «en línea» (inline), tal como se usan en este tema, no se deberían confundir con
+    los tipos de casillas de CSS que se conocen con el mismo nombre. Aunque de manera predeterminada están relacionados,
+    el hecho de cambiar el tipo de aspecto visual del CSS no cambia la categoría del elemento ni afecta a aquellos
+    elementos que pueda contener. Una de las razones por las que HTML5 abandonó el uso de estos términos fue para evitar
+    este tipo de confusión.</p>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.6.0/highlight.min.js"></script>
+  <script>hljs.highlightAll();</script>
+</body>
+
+</html>

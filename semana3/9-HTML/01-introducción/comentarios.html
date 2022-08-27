@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Comentarios HTML</title>
+  <link rel="stylesheet" href="https://highlightjs.org/static/demo/styles/monokai-sublime.css">
+  <style>
+    body {
+      margin: 0;
+      padding: 0 20px;
+      border-top: 4px solid #ff6200;
+      background-color: #111;
+      color: #aaa;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif
+    }
+
+    h1,
+    h2 {
+      color: #e0e0e0;
+    }
+
+    ul li strong {
+      color: #f92672;
+    }
+  </style>
+</head>
+
+<body>
+  <h1>Comentarios HTML</h1>
+
+  <p>En HTML hay un mecanismo para escribir comentarios en el código. Los comentarios son ignorados por el navegador y,
+    por tanto, son invisibles para el usuario. El propósito de los comentarios es permitirte incluir notas en el código
+    para explicar tu lógica o codificación. Esto es muy útil si regresas a un código base después de estar ausente el
+    tiempo suficiente como para no recordarlo por completo.</p>
+
+  <p>Para convertir en un comentario una sección de contenido de tu archivo HTML, debes delimitarlo con los marcadores
+    especiales &lt;!-- y -->. Por ejemplo:</p>
+
+  <pre><code class="language-html">
+    &lt;p&gt;No soy un comentario&lt;/p&gt;<br />
+    <br />
+    &lt;!-- &lt;p&gt;&iexcl;Yo s&iacute;!&lt;/p&gt; --&gt;
+  </code></pre>
+
+  <a href="./index.html">Regresar</a>
+  <br><br>
+
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.6.0/highlight.min.js"></script>
+  <script>hljs.highlightAll();</script>
+</body>
+
+</html>

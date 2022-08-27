@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://highlightjs.org/static/demo/styles/monokai-sublime.css">
+  <title>Desbordamiento</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <header>
+    <h1>Contenido desbordado</h1>
+    <p>El desbordamiento es lo que sucede cuando hay demasiado contenido para que pueda caber cómodamente en una caja.</p>
+  </header>
+
+  <main>
+    <section>
+      <p>CSS no oculta su contenido; hacerlo provocaría la pérdida de datos, que generalmente es un problema.</p>
+
+      <p>Para evitar esto, podemos utilizar la propiedad overflow:</p>
+      <ul>
+        <li><strong>hidden</strong>: Esto puede hacer que las cosas desaparezcan, por lo que solo debes utilizar esta opción si ocultar contenido no te va a causar ningún problema.</li>
+        <li><strong>scroll</strong>: Tu navegador siempre mostrará barras de desplazamiento, incluso cuando no haya suficiente contenido para que pueda desbordarse.</li>
+        <li><strong>overflow-y</strong>: Puedes establecer overflow-y: scroll para poder desplazarte solo por el eje y.</li>
+        <li><strong>overflow-x</strong>: o usar overflow-x: scroll para poder desplazarte solo por el eje x.</li>
+        <li><strong>auto</strong>: Si deseas que aparezcan barras de desplazamiento solo si hay más contenido del que cabe en la caja, utiliza overflow: auto.</li>
+      </ul>
+
+      <div class="caja">
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque reiciendis magni pariatur ut vitae, eligendi nemo consequuntur temporibus optio nihil fugit qui veritatis a necessitatibus quaerat, debitis consequatur tenetur! Illum!</p>
+
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Deserunt qui alias est laborum, dolore a consequuntur dolores et totam id minus eum aspernatur ipsam vitae harum dicta nesciunt magni ullam?</p>
+      </div>
+
+      <p>Este parrafo esta fuera de la caja</p>
+
+    </section>
+  </main>
+
+
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.6.0/highlight.min.js"></script>
+  <script>hljs.highlightAll();</script>
+</body>
+
+</html>

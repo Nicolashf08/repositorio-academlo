@@ -1,0 +1,524 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Formularios en HTML5</title>
+  <link rel="stylesheet" href="https://highlightjs.org/static/demo/styles/monokai-sublime.css">
+  <style>
+    body {
+      margin: 0;
+      padding: 0 20px;
+      border-top: 4px solid #ff6200;
+      background-color: #111;
+      color: #aaa;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif
+    }
+
+    h1,
+    h2 {
+      color: #e0e0e0;
+    }
+
+    ul li strong,
+    p code {
+      color: #f92672;
+    }
+  </style>
+</head>
+
+<body>
+  <h1>Formularios en HTML5</h1>
+
+  <p>Los elementos y atributos para formularios en HTML5 proveen un mayor grado de marcado semántico que en HTML4 y
+    eliminan gran parte del tedioso trabajo de programar y diseñar que se necesitaba en HTML4. Las funcionalidades de
+    los formularios en HTML5 brindan una experiencia mejor para los usuarios al permitir que los formularios tengan un
+    comportamiento más consistente entre diferentes sitios web y al darle una devolución inmediata acerca de la
+    información ingresada. También proveen esta experiencia a los usuarios que han deshabilitado javascript en sus
+    navegadores.</p>
+
+  <h2>El elemento <code>form</code></h2>
+
+  <p>Todos los formularios comienzan con un elemento <code>form</code>, como este:</p>
+
+  <pre><code class="language-html">
+    &lt;form&gt;&lt;/form&gt;
+  </code></pre>
+
+  <p>Este elemento define formalmente un formulario. Es un elemento contenedor, como un elemento <code>section</code> o
+    <code>footer</code>, pero específico para contener formularios.
+  </p>
+
+  <h2>Los elementos <code>label</code>, <code>input</code> y <code>textarea</code></h2>
+
+  <form>
+    <div>
+      <label for="name">Texto: </label>
+      <input type="text" name="name" id="name">
+    </div>
+
+    <br>
+
+    <div>
+      <label for="email">Correo: </label>
+      <input type="email" name="email" id="email">
+    </div>
+
+    <br>
+
+    <div>
+      <label for="password">Contraseña: </label>
+      <input type="password" name="password" id="password">
+    </div>
+
+    <br>
+
+    <div>
+      <label for="file">Archivo: </label>
+      <input type="file" name="file" id="file">
+    </div>
+
+    <br>
+
+    <div>
+      <label for="file">Archivos: </label>
+      <input type="file" name="file" id="file" multiple>
+    </div>
+
+    <br>
+
+    <div>
+      <label for="tel">Telefono: </label>
+      <input type="tel" name="tel" id="tel">
+    </div>
+
+    <br>
+
+    <div>
+      <label for="url">URL: </label>
+      <input type="url" name="url" id="url">
+    </div>
+
+    <br>
+
+    <div>
+      <label for="date">Fecha: </label>
+      <input type="date" name="date" id="date">
+    </div>
+
+    <br>
+
+    <div>
+      <label for="time">Hora: </label>
+      <input type="time" name="time" id="time">
+    </div>
+
+    <br>
+
+    <div>
+      <label for="datetime">Fecha y hora: </label>
+      <input type="datetime" name="datetime" id="datetime">
+    </div>
+
+    <br>
+
+    <div>
+      <label for="datetime-local">Fecha y hora local: </label>
+      <input type="datetime-local" name="datetime-local" id="datetime-local">
+    </div>
+
+    <br>
+
+    <div>
+      <label for="month">Mes: </label>
+      <input type="month" name="month" id="month">
+    </div>
+
+    <br>
+
+    <div>
+      <label for="week">Semana: </label>
+      <input type="week" name="week" id="week">
+    </div>
+
+    <br>
+
+    <div>
+      <label for="color">Color: </label>
+      <input type="color" name="color" id="color">
+    </div>
+
+    <br>
+
+    <div>
+      <label for="checkbox">Checkbox: </label>
+      <input type="checkbox" name="checkbox" id="checkbox">
+    </div>
+
+    <br>
+
+    <div>
+      <label for="radio">Radio: </label>
+      <input type="radio" name="radio" id="radio">
+    </div>
+
+    <br>
+
+    <div>
+      <label for="range">Rango: </label>
+      <input type="range" name="range" id="range">
+    </div>
+
+    <br>
+
+    <div>
+      <input type="submit" name="submit" id="submit">
+    </div>
+
+    <br>
+
+    <div>
+      <label for="message">Mensaje: </label>
+      <textarea name="message" id="message" rows="5"></textarea>
+    </div>
+
+  </form>
+
+  <h3>Código:</h3>
+  <pre><code class="language-html">
+    &nbsp;&nbsp;&lt;form&gt;<br />
+    &nbsp;&nbsp;&nbsp;&nbsp;&lt;div&gt;<br />
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;label for=&quot;name&quot;&gt;Texto: &lt;/label&gt;<br />
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;input type=&quot;text&quot; name=&quot;name&quot; id=&quot;name&quot;&gt;<br />
+    &nbsp;&nbsp;&nbsp;&nbsp;&lt;/div&gt;<br />
+    <br />
+    &nbsp;&nbsp;&nbsp;&nbsp;&lt;br&gt;<br />
+    <br />
+    &nbsp;&nbsp;&nbsp;&nbsp;&lt;div&gt;<br />
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;label for=&quot;email&quot;&gt;Correo: &lt;/label&gt;<br />
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;input type=&quot;email&quot; name=&quot;email&quot; id=&quot;email&quot;&gt;<br />
+    &nbsp;&nbsp;&nbsp;&nbsp;&lt;/div&gt;<br />
+    <br />
+    &nbsp;&nbsp;&nbsp;&nbsp;&lt;br&gt;<br />
+    <br />
+    &nbsp;&nbsp;&nbsp;&nbsp;&lt;div&gt;<br />
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;label for=&quot;password&quot;&gt;Contrase&ntilde;a: &lt;/label&gt;<br />
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;input type=&quot;password&quot; name=&quot;password&quot; id=&quot;password&quot;&gt;<br />
+    &nbsp;&nbsp;&nbsp;&nbsp;&lt;/div&gt;<br />
+    <br />
+    &nbsp;&nbsp;&nbsp;&nbsp;&lt;br&gt;<br />
+    <br />
+    &nbsp;&nbsp;&nbsp;&nbsp;&lt;div&gt;<br />
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;label for=&quot;file&quot;&gt;Archivo: &lt;/label&gt;<br />
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;input type=&quot;file&quot; name=&quot;file&quot; id=&quot;file&quot;&gt;<br />
+    &nbsp;&nbsp;&nbsp;&nbsp;&lt;/div&gt;<br />
+    <br />
+    &nbsp;&nbsp;&nbsp;&nbsp;&lt;br&gt;<br />
+    <br />
+    &nbsp;&nbsp;&nbsp;&nbsp;&lt;div&gt;<br />
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;label for=&quot;file&quot;&gt;Archivos: &lt;/label&gt;<br />
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;input type=&quot;file&quot; name=&quot;file&quot; id=&quot;file&quot; multiple&gt;<br />
+    &nbsp;&nbsp;&nbsp;&nbsp;&lt;/div&gt;<br />
+    <br />
+    &nbsp;&nbsp;&nbsp;&nbsp;&lt;br&gt;<br />
+    <br />
+    &nbsp;&nbsp;&nbsp;&nbsp;&lt;div&gt;<br />
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;label for=&quot;tel&quot;&gt;Telefono: &lt;/label&gt;<br />
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;input type=&quot;tel&quot; name=&quot;tel&quot; id=&quot;tel&quot;&gt;<br />
+    &nbsp;&nbsp;&nbsp;&nbsp;&lt;/div&gt;<br />
+    <br />
+    &nbsp;&nbsp;&nbsp;&nbsp;&lt;br&gt;<br />
+    <br />
+    &nbsp;&nbsp;&nbsp;&nbsp;&lt;div&gt;<br />
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;label for=&quot;url&quot;&gt;URL: &lt;/label&gt;<br />
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;input type=&quot;url&quot; name=&quot;url&quot; id=&quot;url&quot;&gt;<br />
+    &nbsp;&nbsp;&nbsp;&nbsp;&lt;/div&gt;<br />
+    <br />
+    &nbsp;&nbsp;&nbsp;&nbsp;&lt;br&gt;<br />
+    <br />
+    &nbsp;&nbsp;&nbsp;&nbsp;&lt;div&gt;<br />
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;label for=&quot;date&quot;&gt;Fecha: &lt;/label&gt;<br />
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;input type=&quot;date&quot; name=&quot;date&quot; id=&quot;date&quot;&gt;<br />
+    &nbsp;&nbsp;&nbsp;&nbsp;&lt;/div&gt;<br />
+    <br />
+    &nbsp;&nbsp;&nbsp;&nbsp;&lt;br&gt;<br />
+    <br />
+    &nbsp;&nbsp;&nbsp;&nbsp;&lt;div&gt;<br />
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;label for=&quot;time&quot;&gt;Hora: &lt;/label&gt;<br />
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;input type=&quot;time&quot; name=&quot;time&quot; id=&quot;time&quot;&gt;<br />
+    &nbsp;&nbsp;&nbsp;&nbsp;&lt;/div&gt;<br />
+    <br />
+    &nbsp;&nbsp;&nbsp;&nbsp;&lt;br&gt;<br />
+    <br />
+    &nbsp;&nbsp;&nbsp;&nbsp;&lt;div&gt;<br />
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;label for=&quot;datetime&quot;&gt;Fecha y hora: &lt;/label&gt;<br />
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;input type=&quot;datetime&quot; name=&quot;datetime&quot; id=&quot;datetime&quot;&gt;<br />
+    &nbsp;&nbsp;&nbsp;&nbsp;&lt;/div&gt;<br />
+    <br />
+    &nbsp;&nbsp;&nbsp;&nbsp;&lt;br&gt;<br />
+    <br />
+    &nbsp;&nbsp;&nbsp;&nbsp;&lt;div&gt;<br />
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;label for=&quot;datetime-local&quot;&gt;Fecha y hora local: &lt;/label&gt;<br />
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;input type=&quot;datetime-local&quot; name=&quot;datetime-local&quot; id=&quot;datetime-local&quot;&gt;<br />
+    &nbsp;&nbsp;&nbsp;&nbsp;&lt;/div&gt;<br />
+    <br />
+    &nbsp;&nbsp;&nbsp;&nbsp;&lt;br&gt;<br />
+    <br />
+    &nbsp;&nbsp;&nbsp;&nbsp;&lt;div&gt;<br />
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;label for=&quot;month&quot;&gt;Mes: &lt;/label&gt;<br />
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;input type=&quot;month&quot; name=&quot;month&quot; id=&quot;month&quot;&gt;<br />
+    &nbsp;&nbsp;&nbsp;&nbsp;&lt;/div&gt;<br />
+    <br />
+    &nbsp;&nbsp;&nbsp;&nbsp;&lt;br&gt;<br />
+    <br />
+    &nbsp;&nbsp;&nbsp;&nbsp;&lt;div&gt;<br />
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;label for=&quot;week&quot;&gt;Semana: &lt;/label&gt;<br />
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;input type=&quot;week&quot; name=&quot;week&quot; id=&quot;week&quot;&gt;<br />
+    &nbsp;&nbsp;&nbsp;&nbsp;&lt;/div&gt;<br />
+    <br />
+    &nbsp;&nbsp;&nbsp;&nbsp;&lt;br&gt;<br />
+    <br />
+    &nbsp;&nbsp;&nbsp;&nbsp;&lt;div&gt;<br />
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;label for=&quot;color&quot;&gt;Color: &lt;/label&gt;<br />
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;input type=&quot;color&quot; name=&quot;color&quot; id=&quot;color&quot;&gt;<br />
+    &nbsp;&nbsp;&nbsp;&nbsp;&lt;/div&gt;<br />
+    <br />
+    &nbsp;&nbsp;&nbsp;&nbsp;&lt;br&gt;<br />
+    <br />
+    &nbsp;&nbsp;&nbsp;&nbsp;&lt;div&gt;<br />
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;label for=&quot;checkbox&quot;&gt;Checkbox: &lt;/label&gt;<br />
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;input type=&quot;checkbox&quot; name=&quot;checkbox&quot; id=&quot;checkbox&quot;&gt;<br />
+    &nbsp;&nbsp;&nbsp;&nbsp;&lt;/div&gt;<br />
+    <br />
+    &nbsp;&nbsp;&nbsp;&nbsp;&lt;br&gt;<br />
+    <br />
+    &nbsp;&nbsp;&nbsp;&nbsp;&lt;div&gt;<br />
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;label for=&quot;radio&quot;&gt;Radio: &lt;/label&gt;<br />
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;input type=&quot;radio&quot; name=&quot;radio&quot; id=&quot;radio&quot;&gt;<br />
+    &nbsp;&nbsp;&nbsp;&nbsp;&lt;/div&gt;<br />
+    <br />
+    &nbsp;&nbsp;&nbsp;&nbsp;&lt;br&gt;<br />
+    <br />
+    &nbsp;&nbsp;&nbsp;&nbsp;&lt;div&gt;<br />
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;label for=&quot;range&quot;&gt;Rango: &lt;/label&gt;<br />
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;input type=&quot;range&quot; name=&quot;range&quot; id=&quot;range&quot;&gt;<br />
+    &nbsp;&nbsp;&nbsp;&nbsp;&lt;/div&gt;<br />
+    <br />
+    &nbsp;&nbsp;&nbsp;&nbsp;&lt;br&gt;<br />
+    <br />
+    &nbsp;&nbsp;&nbsp;&nbsp;&lt;div&gt;<br />
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;input type=&quot;submit&quot; name=&quot;submit&quot; id=&quot;submit&quot;&gt;<br />
+    &nbsp;&nbsp;&nbsp;&nbsp;&lt;/div&gt;<br />
+    <br />
+    &nbsp;&nbsp;&nbsp;&nbsp;&lt;br&gt;<br />
+    <br />
+    &nbsp;&nbsp;&nbsp;&nbsp;&lt;div&gt;<br />
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;label for=&quot;message&quot;&gt;Mensaje: &lt;/label&gt;<br />
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;textarea name=&quot;message&quot; id=&quot;message&quot; rows=&quot;5&quot;&gt;&lt;/textarea&gt;<br />
+    &nbsp;&nbsp;&nbsp;&nbsp;&lt;/div&gt;<br />
+    <br />
+    &nbsp;&nbsp;&lt;/form&gt;
+    </code></pre>
+
+  <p>Ten en cuenta el uso del atributo for en todos los elementos <code>label</code>, que toma como valor el
+    <code>id</code> del control de formulario con el que está asociado; así es como asocias un formulario con su
+    etiqueta.
+  </p>
+
+  <p>Hacer esto presenta muchas ventajas porque la etiqueta está asociada al control del formulario y permite que los
+    usuarios con ratón, panel táctil y dispositivos táctiles hagan clic en la etiqueta para activar el control
+    correspondiente.</p>
+
+  <p>En el elemento <code>input</code>, el atributo más importante es <code>type</code>. Este atributo es muy importante
+    porque define la forma en que el elemento <code>input</code> aparece y se comporta.</p>
+
+  <p>Por último, pero no por ello menos importante, ten en cuenta la sintaxis de <code>&lt;input&gt;</code> en
+    contraposición con la de <code>&lt;textarea&gt;&lt;/textarea&gt;</code>. Esta es una de las rarezas del HTML. La
+    etiqueta <code>input</code> es un elemento vacío, lo que significa que no necesita una etiqueta de cierre. El
+    elemento <code>textarea</code> no es un elemento vacío, lo que significa que debe cerrarse con la etiqueta de cierre
+    adecuada. Esto tiene un impacto en una característica específica de los formularios: el modo en que defines el valor
+    predeterminado. Para definir el valor predeterminado de un elemento <code>input</code>, debes usar el atributo value
+    de esta manera:</p>
+
+  <pre><code class="language-html">
+      &lt;input type=&quot;text&quot; value=&quot;por defecto este elemento se llena con este texto&quot;&gt;
+    </code></pre>
+
+  <p>Por otro lado, si deseas definir un valor predeterminado para un elemento <code>textarea</code>, lo colocas entre
+    las etiquetas de apertura y cierre del elemento <code>textarea</code>, así:</p>
+
+  <pre><code class="language-html">
+      &lt;textarea&gt;<br />
+      Por defecto, este elemento contiene este texto<br />
+      &lt;/textarea&gt;
+    </code></pre>
+
+  <h2>El elemento <code>button</code></h2>
+
+  <p>El marcado de nuestro formulario está casi completo; solo necesitamos añadir un botón para permitir que el usuario
+    envíe sus datos una vez que haya completado el formulario. Esto se hace con el elemento <code>button</code></p>
+
+  <div class="button">
+    <button type="submit">Envíe su mensaje</button>
+  </div>
+
+  <h3>Código:</h3>
+  <pre><code class="language-html">
+      &lt;button type=&quot;submit&quot;&gt;Envíe su mensaje&lt;/button&gt;
+    </code></pre>
+
+  <p>El elemento <code>button</code> también acepta un atributo <code>type</code>, que a su vez acepta uno de estos tres
+    valores: <code>submit</code>, <code>reset</code> o <code>button</code>.</p>
+
+  <ul>
+    <li>Un clic en un botón <strong><code>submit</code></strong>(el valor predeterminado) envía los datos del formulario
+      a la página web definida por el atributo action del elemento <strong><code>form</code></strong>.</li>
+    <li>Un clic en un botón <strong><code>reset</code></strong> restablece de inmediato todos los controles de
+      formulario a su valor predeterminado. Desde el punto de vista de UX, esto se considera una mala práctica, por lo
+      que debes evitar usar este tipo de botones a menos que realmente tengas una buena razón para incluirlos.</li>
+    <li>Un clic en un botón <strong><code>button</code></strong> no hace... ¡nada! Eso suena tonto, pero es muy útil
+      para crear botones personalizados: puedes definir su función con JavaScript.</li>
+  </ul>
+
+  <h2>Otros controles de formulario</h2>
+  <h3>Cuadro de selección</h3>
+
+  <select id="select" name="select">
+    <option>Platano</option>
+    <option selected>Fresa</option>
+    <option>Uva</option>
+  </select>
+
+  <h3>Código:</h3>
+  <pre><code class="language-html">
+      &lt;select id=&quot;select&quot; name=&quot;select&quot;&gt;<br />
+      &nbsp;&nbsp;&lt;option&gt;Platano&lt;/option&gt;<br />
+      &nbsp;&nbsp;&lt;option selected&gt;Fresa&lt;/option&gt;<br />
+      &nbsp;&nbsp;&lt;option&gt;Uva&lt;/option&gt;<br />
+      &lt;/select&gt;
+    </code></pre>
+
+  <p>Se crea un cuadro de selección simple con un elemento <code>select</code> con uno o más elementos
+    <code>option</code> como sus hijos, cada uno de los cuales especifica uno de sus valores posibles.
+  </p>
+
+  <h3>Uso de optgroup</h3>
+
+  <p>Los elementos <code>option</code> se pueden anidar dentro de elementos <code>optgroup</code> para crear grupos de
+    valores asociados visualmente:</p>
+
+  <select id="grupos" name="grupos">
+    <optgroup label="frutas">
+      <option>Platano</option>
+      <option selected>Fresa</option>
+      <option>Uva</option>
+    </optgroup>
+    <optgroup label="verduras">
+      <option>Tomate</option>
+      <option>Cebolla</option>
+      <option>Brocoli</option>
+    </optgroup>
+  </select>
+
+  <h3>Código:</h3>
+  <pre><code class="language-html">
+      &lt;select id=&quot;grupos&quot; name=&quot;grupos&quot;&gt;<br />
+      &nbsp;&nbsp;&lt;optgroup label=&quot;frutas&quot;&gt;<br />
+      &nbsp;&nbsp;&nbsp;&nbsp;&lt;option&gt;Platano&lt;/option&gt;<br />
+      &nbsp;&nbsp;&nbsp;&nbsp;&lt;option selected&gt;Fresa&lt;/option&gt;<br />
+      &nbsp;&nbsp;&nbsp;&nbsp;&lt;option&gt;Uva&lt;/option&gt;<br />
+      &nbsp;&nbsp;&lt;/optgroup&gt;<br />
+      &nbsp;&nbsp;&lt;optgroup label=&quot;verduras&quot;&gt;<br />
+      &nbsp;&nbsp;&nbsp;&nbsp;&lt;option&gt;Tomate&lt;/option&gt;<br />
+      &nbsp;&nbsp;&nbsp;&nbsp;&lt;option&gt;Cebolla&lt;/option&gt;<br />
+      &nbsp;&nbsp;&nbsp;&nbsp;&lt;option&gt;Brocoli&lt;/option&gt;<br />
+      &nbsp;&nbsp;&lt;/optgroup&gt;<br />
+      &lt;/select&gt;
+    </code></pre>
+
+  <h3>Uso del atributo value</h3>
+
+  <p>Si un elemento <code>option</code> tiene un atributo explícito establecido, ese valor se envía cuando se envía el
+    formulario con esa opción seleccionada. Si se omite el atributo, como en los ejemplos anteriores, se utiliza el
+    contenido del elemento <code>option</code> como valor.</p>
+
+  <select id="valores" name="valores">
+    <option value="platano">Platano Maduro</option>
+    <option value="fresa">Deliciosas, Fresas Congeladas</option>
+    <option value="uva">Racimo de Uvas</option>
+  </select>
+
+  <h3>Código:</h3>
+  <pre><code class="language-html">
+      &lt;select id=&quot;valores&quot; name=&quot;valores&quot;&gt;<br />
+      &nbsp;&nbsp;&lt;option value=&quot;platano&quot;&gt;Platano Maduro&lt;/option&gt;<br />
+      &nbsp;&nbsp;&lt;option value=&quot;fresa&quot;&gt;Deliciosas, Fresas Congeladas&lt;/option&gt;<br />
+      &nbsp;&nbsp;&lt;option value=&quot;uva&quot;&gt;Racimo de Uvas&lt;/option&gt;<br />
+      &lt;/select&gt;
+    </code></pre>
+
+  <h3>Cuadro autocompletar</h3>
+
+  <p>Puede proporcionar valores sugeridos y completados automáticamente para los widgets de formulario mediante el
+    elemento <code>datalist</code> con elementos secundarios <code>option</code> para especificar los valores que se van
+    a mostrar.</p>
+
+  <label for="frutas">¿Cual es tu frutas Favorita?</label>
+  <input type="text" name="frutas" id="frutas" list="misGustos">
+  <datalist id="misGustos">
+    <option>Manzana</option>
+    <option>Platano</option>
+    <option>Pera</option>
+    <option>Mango</option>
+    <option>Uva</option>
+    <option>Fresa</option>
+    <option>Piña</option>
+    <option>Melon</option>
+  </datalist>
+
+  <h3>Código:</h3>
+  <pre><code class="language-html">
+      &lt;label for=&quot;frutas&quot;&gt;¿Cual es tu frutas Favorita?&lt;/label&gt;<br />
+      &lt;input type=&quot;text&quot; name=&quot;frutas&quot; id=&quot;frutas&quot; list=&quot;misGustos&quot;&gt;<br />
+      &lt;datalist id=&quot;misGustos&quot;&gt;<br />
+      &nbsp;&nbsp;&lt;option&gt;Manzana&lt;/option&gt;<br />
+      &nbsp;&nbsp;&lt;option&gt;Platano&lt;/option&gt;<br />
+      &nbsp;&nbsp;&lt;option&gt;Pera&lt;/option&gt;<br />
+      &nbsp;&nbsp;&lt;option&gt;Mango&lt;/option&gt;<br />
+      &nbsp;&nbsp;&lt;option&gt;Uva&lt;/option&gt;<br />
+      &nbsp;&nbsp;&lt;option&gt;Fresa&lt;/option&gt;<br />
+      &nbsp;&nbsp;&lt;option&gt;Piña&lt;/option&gt;<br />
+      &nbsp;&nbsp;&lt;option&gt;Melon&lt;/option&gt;<br />
+      &lt;/datalist&gt;
+    </code></pre>
+
+  <h3>Medidores y barras de progreso</h3>
+
+  <p>Una barra de progreso representa un valor que cambia con el tiempo hasta un valor máximo especificado por el
+    atributo max. Dicha barra se crea utilizando un elemento <code>progress</code>.</p>
+
+  <progress max="100" value="75">75/100</progress>
+
+  <h3>Código:</h3>
+  <pre><code class="language-html">
+        &lt;progress max=&quot;100&quot; value=&quot;75&quot;&gt;75/100&lt;/progress&gt;
+      </code></pre>
+
+  <p>Una barra de medidor representa un valor fijo en un rango delimitado por valores máximos y mínimos.</p>
+
+  <meter min="0" max="100" value="75" low="33" high="66" optimum="50">75</meter>
+
+  <h3>Código:</h3>
+  <pre><code class="language-html">
+        &lt;meter min=&quot;0&quot; max=&quot;100&quot; value=&quot;75&quot; low=&quot;33&quot; high=&quot;66&quot; optimum=&quot;50&quot;&gt;75&lt;/meter&gt;
+      </code></pre>
+
+  <br><br>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.6.0/highlight.min.js"></script>
+  <script>hljs.highlightAll();</script>
+</body>
+
+</html>

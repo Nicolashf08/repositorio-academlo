@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://highlightjs.org/static/demo/styles/monokai-sublime.css">
+  <title>Media Querys</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <header>
+    <h1>Media Querys</h1>
+    <p>Una de las características más importantes de las hojas de estilos CSS es que permiten definir diferentes estilos para diferentes medios o dispositivos: pantallas, impresoras, móviles, proyectores, etc.</p>
+
+    <p>Los medios más utilizados actualmente son screen (para definir el aspecto de la página en pantalla) y print (para definir el aspecto de la página cuando se imprime).</p>
+  </header>
+
+  <main>
+    <section>
+      <h2>@media</h2>
+      <p>Las reglas @media son un tipo especial de regla CSS que permiten indicar de forma directa el medio o medios en los que se aplicarán los estilos incluidos en la regla. Para especificar el medio en el que se aplican los estilos, se incluye su nombre después de @media. Si los estilos se aplican a varios medios, se incluyen los nombres de todos los medios separados por comas.</p>
+
+      <ol>
+        <li><strong>Keyword</strong>: Palabra reservada, @media.</li>
+        <li><strong>Media Type</strong>: Tipo de medio, print, screen, speach, etc.</li>
+        <li><strong>Operator</strong>: Operadores, and | or | not.</li>
+        <li><strong>Media Condition</strong>: Condición del medio, min-width, max-width, min-height, max-height, etc.</li>
+        <li><strong>Breakpoint</strong>: Valor de la condición, 320px, 576px, etc.</li>
+      </ol>
+
+      <pre>
+        <code class="language-css">
+        @keword type operator (conditional: breakpoint) {<br />
+        &nbsp;&nbsp;selector {<br />
+        &nbsp;&nbsp;&nbsp;&nbsp;prop: value;<br />
+        &nbsp;&nbsp;}<br />
+        }
+        </code>
+      </pre>
+
+      <h3>Ejemplos de media queries</h3>
+      <p>Veamos un ejemplo clásico de media queries en el que definimos diferentes estilos dependiendo del dispositivo que estamos utilizando.</p>
+
+      <pre>
+        <code class="language-css">
+        @media screen and (min-width: 320px) {<br />
+        &nbsp;&nbsp;.small {<br />
+        &nbsp;&nbsp;&nbsp;&nbsp;font-size: 1.2rem;<br />
+        &nbsp;&nbsp;&nbsp;&nbsp;color: #333;<br />
+        &nbsp;&nbsp;}<br />
+        }<br />
+        </code>
+      </pre>
+
+      <p>Actualmente podemos usar los media queries de esta forma, es totalmente valido.</p>
+
+      <pre>
+        <code class="language-css">
+        @media (max-width: 320px) {<br />
+        &nbsp;&nbsp;.small {<br />
+        &nbsp;&nbsp;&nbsp;&nbsp;font-size: 1.2rem;<br />
+        &nbsp;&nbsp;&nbsp;&nbsp;color: #333;<br />
+        &nbsp;&nbsp;}<br />
+        }<br />
+        </code>
+    </section>
+
+    <section>
+      <h2>Mobile First</h2>
+      <p>En 2015, Google anunció que por primera vez había recibido más búsquedas realizadas desde dispositivos móviles que de escritorio. Como consecuencia, la industria online ha puesto un mayor interés en el desarrollo de nuevos conceptos y estrategias de diseño web móvil. De esta forma, la metodología Mobile First ha revolucionado la creación de páginas al enfocarse primero en el diseño para terminales móviles pensando también en su usabilidad y rendimiento, para luego adaptarlas a la pantalla de un ordenador.</p>
+      
+      <h3>¿Qué diferencias existen entre Mobile First y Responsive?</h3>
+
+      <p>A menudo existe cierta confusión entre estos dos términos, por ello, es necesario conocer en qué se diferencian y cuál es el planteamiento desarrollado por cada una de estas metodologías de diseño.</p>
+
+      <p>Por un lado encontramos el diseño web Responsive, el cual consiste en pensar y crear una web en formato para ordenadores o portátiles y, finalmente, adaptar todos los componentes a versión móvil.</p>
+
+      <p>En otra perspectiva encontramos el diseño Mobile First que trata de desarrollar el sitio web inicialmente en formato móvil y la adaptación se experimentará en el PC.</p>
+
+      <p>Obviamente, el diseño web tradicional para ordenadores y portátiles no se debe dejar de lado, pero quien quiera que su negocio llegue a una mayor cantidad de clientes potenciales, y por lo tanto generar un mayor tráfico a su página web, deberá concentrarse en el desarrollo de una estrategia de diseño web móvil. Empezar a trabajar usando la estrategia Mobile First, no representará en ningún momento un retroceso técnico. Gracias a su sencilla estructura, limitada a lo esencial, es posible adaptarla y añadirle nuevas características una vez haya sido terminada.</p>
+    </section>
+  </main>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.6.0/highlight.min.js"></script>
+  <script>hljs.highlightAll();</script>
+</body>
+
+</html>

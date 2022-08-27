@@ -1,0 +1,57 @@
+html {
+  font-family: sans-serif;
+  font-size: 16px;
+  box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+body {
+  max-width: 692px;
+  margin: 0 auto;
+  padding: 20px;
+  line-height: 1.5;
+}
+
+img {
+  width: 100%;
+}
+
+.img-container {
+  width: 450px;
+  margin: 0 auto;
+}
+
+.container {
+  width: 100%;
+  min-height: 85vh;
+  background-color: lightcoral;
+  border: 1px solid orangered;
+
+  display: grid;
+
+  grid-template-columns: repeat(4, auto);
+  grid-template-rows: auto auto auto;
+}
+
+.container > div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: lightsalmon;
+  border: 2px solid white;
+  outline: 1px solid orangered;
+  /* padding: 20px; */
+}
+
+.container div:nth-child(4){
+  background-color: red;
+  grid-column: 3 / 6;
+  grid-row: 2 / 3;
+}
+
+/* Propiedades para ítems hijos */
